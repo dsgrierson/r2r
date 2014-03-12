@@ -7,3 +7,5 @@ R_tol = .3 % Tolerance Percentage of feedback resistor
 RStroke_Nom = stroke_length * R_per_mm % Nominal Full Stroke Resistance
 RStroke_min = RStroke_Nom*(1-R_tol)
 RStroke_max = RStroke_Nom*(1+R_tol)
+
+NI_9505_5v_I_Out = 5/RStroke_min
