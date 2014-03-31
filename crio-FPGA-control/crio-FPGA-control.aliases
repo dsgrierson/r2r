@@ -1,9 +1,5 @@
 [My Computer]
-<<<<<<< HEAD
-My Computer = "72.33.183.118"
-=======
 My Computer = "128.104.191.196"
->>>>>>> 415684d757649ec67eed6145c3244c13aaefff6a
 
 [NI-cRIO9075-0165A2E6]
 NI-cRIO9075-0165A2E6 = "crio-9075-01.me.wisc.edu"
