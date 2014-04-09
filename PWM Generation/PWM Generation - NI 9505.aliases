@@ -1,0 +1,9 @@
+[BillcRIO]
+BillcRIO = "10.0.58.59"
+
+[My Computer]
+My Computer = "10.0.58.8"
+
+[RT CompactRIO Target]
+RT CompactRIO Target = "0.0.0.0"
+
