@@ -3,7 +3,7 @@
 clc; clear all; close all;
 
 
-% Design a low pass filter for the virtual compliance y* command signal
+%% Design a low pass state filter for the virtual compliance y* command signal
 
 Ts = 40000/40e6 % from crio-FPGA-control\Globals\Global - Configuration Options.vi
 
@@ -22,7 +22,9 @@ h.AxesGrid.Yunits = {'abs','deg'};
 % Turn on the grid
 grid on; % or h.AxesGrid.Grid = "on"
 
-filt_d = c2d(filt,Ts,'zoh')
+filt_d = c2d(filt,Ts,'zoh');
+filt_d.Variable = 'z^-1'
+filt_d
 
 figure; 
 bode(filt_d)
