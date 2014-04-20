@@ -12,7 +12,7 @@ CurrentFB_FxdPt = Float2SignedQpt(CurrentFB,1);
 
 K_ADC_9381 = (4095-0)/(5-0) % Counts/Volt
 
-% Compute Gain of Force System (DCM460 2/ HPB-20 Transducer
+%% Compute Gain of Force System (DCM460 2/ HPB-20 Transducer
 g = 9.81 % acceleration of gravity on earth (m/s^2)
 mass = [ 0 20 ] % mass range in Kg
 F = mass*g % Compute Force Range
@@ -40,3 +40,9 @@ K_L12_Pos_m_per_volt = K_L12_Pos_mm_per_volt/1000 %Convert to m/Volt
 
 % Now lump in ADC Gain
 K_L12_Pos = K_L12_Pos_m_per_volt/K_ADC_9381 % meter/Volt / Counts/Volt = meters/count
+
+%% Compute Gain for the PWM
+PWM_res = 2000 % Number of counts for pwm
+V_rail = 24
+K_PWM = PWM_res/V_rail
+
