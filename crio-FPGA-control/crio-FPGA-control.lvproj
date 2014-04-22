@@ -71,6 +71,7 @@
 			<Item Name="Variable References.ctl" Type="VI" URL="../controls/Variable References.ctl"/>
 		</Item>
 		<Item Name="UI Main.vi" Type="VI" URL="../UI Main.vi"/>
+		<Item Name="R2R-Controller-PCTesting.vi" Type="VI" URL="../R2R-Controller-PCTesting.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="Clear Errors.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Clear Errors.vi"/>
@@ -104,6 +105,9 @@
 				<Item Name="General Error Handler CORE.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/General Error Handler CORE.vi"/>
 				<Item Name="DialogType.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/DialogType.ctl"/>
 				<Item Name="General Error Handler.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/General Error Handler.vi"/>
+				<Item Name="niFPGA BW CU Order 4 (32-bit).vi" Type="VI" URL="/&lt;vilib&gt;/rvi/Analysis/measure/butterworth/templates/niFPGA BW CU Order 4 (32-bit).vi"/>
+				<Item Name="niFPGA I32xI32 MAC - FXP.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/Analysis/utilities/niFPGA I32xI32 MAC - FXP.vi"/>
+				<Item Name="NI_PID_FPGA.lvlib" Type="Library" URL="/&lt;vilib&gt;/addons/control/pid/NI_PID_FPGA.lvlib"/>
 			</Item>
 		</Item>
 		<Item Name="Build Specifications" Type="Build">
