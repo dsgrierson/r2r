@@ -836,20 +836,6 @@ InactivityTimeout 60
 					<Item Name="nirvififoEmulationCreateLock.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/FIFO/Fifo_Resource/nirvififoEmulationCreateLock.vi"/>
 					<Item Name="nirviWaitOnOccurrenceBase.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/occurrence/nirviWaitOnOccurrenceBase.vi"/>
 					<Item Name="niFpgaEmulationVisToLoad.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/Emulation/niFpgaEmulationVisToLoad.vi"/>
-					<Item Name="XDNodeRunTimeDep.lvlib" Type="Library" URL="/&lt;vilib&gt;/Platform/TimedLoop/XDataNode/XDNodeRunTimeDep.lvlib"/>
-					<Item Name="nirviLSCWaitTime.vi" Type="VI" URL="/&lt;vilib&gt;/express/rvi/timingcommon/nirviLSCWaitTime.vi"/>
-					<Item Name="nirviCommon.vi" Type="VI" URL="/&lt;vilib&gt;/express/rvi/timingcommon/nirviCommon.vi"/>
-					<Item Name="niFpgaExecutionStage.ctl" Type="VI" URL="/&lt;vilib&gt;/rvi/eio/common/niFpgaExecutionStage.ctl"/>
-					<Item Name="EIO_ResourceConfig.ctl" Type="VI" URL="/&lt;vilib&gt;/eio/EIO_ResourceConfig.ctl"/>
-					<Item Name="nirviEmuClasses.ctl" Type="VI" URL="/&lt;vilib&gt;/rvi/eio/common/nirviEmuClasses.ctl"/>
-					<Item Name="niLvFpgaEmuInfo.ctl" Type="VI" URL="/&lt;vilib&gt;/rvi/eio/sdk/emulation/public/niLvFpgaEmuInfo.ctl"/>
-					<Item Name="nirviEmuTemplateMethod_errors.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/eio/common/nirviEmuTemplateMethod_errors.vi"/>
-					<Item Name="nirviEmuTemplatePropertyGet_errors.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/eio/common/nirviEmuTemplatePropertyGet_errors.vi"/>
-					<Item Name="nirviEmuTemplatePropertyGet_noerrors.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/eio/common/nirviEmuTemplatePropertyGet_noerrors.vi"/>
-					<Item Name="_nicrio_cRIO-9505_DriveDirection.ctl" Type="VI" URL="/&lt;vilib&gt;/LabVIEW Targets/FPGA/cRIO/cRIO-9505/controls.llb/_nicrio_cRIO-9505_DriveDirection.ctl"/>
-					<Item Name="_nicrio_cRIO-9505_DriveStatus.ctl" Type="VI" URL="/&lt;vilib&gt;/LabVIEW Targets/FPGA/cRIO/cRIO-9505/controls.llb/_nicrio_cRIO-9505_DriveStatus.ctl"/>
-					<Item Name="nirviEmuTemplatePropertySet_errors.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/eio/common/nirviEmuTemplatePropertySet_errors.vi"/>
-					<Item Name="nirviEmuTemplatePropertySet_noerrors.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/eio/common/nirviEmuTemplatePropertySet_noerrors.vi"/>
 				</Item>
 				<Item Name="Build Specifications" Type="Build">
 					<Item Name="FPGA Main" Type="{F4C5E96F-7410-48A5-BB87-3559BC9B167F}">
@@ -964,19 +950,6 @@ InactivityTimeout 60
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="Message Queue.lvlib" Type="Library" URL="../support/Message Queue/Message Queue.lvlib"/>
-			<Item Name="niFpgaWaitOnOcc.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/interface/common/niFpgaWaitOnOcc.vi"/>
-			<Item Name="niLvFpga_Close_cRIO-9075.vi" Type="VI" URL="/&lt;vilib&gt;/FPGAPlugInAG/cRIO-9075/niLvFpga_Close_cRIO-9075.vi"/>
-			<Item Name="niLvFpgaFormatErrorSource.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/errors/niLvFpgaFormatErrorSource.vi"/>
-			<Item Name="niLvFpgaWhatHappensToTopLevelVI.ctl" Type="VI" URL="/&lt;vilib&gt;/rvi/errors/niLvFpgaWhatHappensToTopLevelVI.ctl"/>
-			<Item Name="niFpgaNodeNameForErrorReporting.ctl" Type="VI" URL="/&lt;vilib&gt;/rvi/interface/common/niFpgaNodeNameForErrorReporting.ctl"/>
-			<Item Name="niLvFpgaAdjustHostInterfaceError.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/errors/niLvFpgaAdjustHostInterfaceError.vi"/>
-			<Item Name="niLvFpga_Run_cRIO-9075.vi" Type="VI" URL="/&lt;vilib&gt;/FPGAPlugInAG/cRIO-9075/niLvFpga_Run_cRIO-9075.vi"/>
-			<Item Name="niLvFpga_Reset_cRIO-9075.vi" Type="VI" URL="/&lt;vilib&gt;/FPGAPlugInAG/cRIO-9075/niLvFpga_Reset_cRIO-9075.vi"/>
-			<Item Name="niLvFpgaErrorClusterFromErrorCode.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/errors/niLvFpgaErrorClusterFromErrorCode.vi"/>
-			<Item Name="nirviErrorClusterFromErrorCode.vi" Type="VI" URL="/&lt;vilib&gt;/RVI Host/nirviSupport.llb/nirviErrorClusterFromErrorCode.vi"/>
-			<Item Name="nirviWhatTheDeviceIsDoing.ctl" Type="VI" URL="/&lt;vilib&gt;/rvi/ClientSDK/nirviWhatTheDeviceIsDoing.ctl"/>
-			<Item Name="nirio_resource_hc.ctl" Type="VI" URL="/&lt;vilib&gt;/userdefined/High Color/nirio_resource_hc.ctl"/>
-			<Item Name="niLvFpga_Open_cRIO-9075.vi" Type="VI" URL="/&lt;vilib&gt;/FPGAPlugInAG/cRIO-9075/niLvFpga_Open_cRIO-9075.vi"/>
 			<Item Name="nisyscfg.dll" Type="Document" URL="nisyscfg.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
