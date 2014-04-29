@@ -3,12 +3,12 @@
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">false</Property>
 	<Property Name="NI.Project.Description" Type="Str"></Property>
 	<Property Name="SMProvider.SMVersion" Type="Int">201310</Property>
-	<Property Name="varPersistentID:{0F20BC0B-D115-4CE9-90C6-E648A0B6D7C5}" Type="Ref">/NI-cRIO9075-0165A2E6/Shared Variables.lvlib/Output Values</Property>
-	<Property Name="varPersistentID:{1360336E-2D43-41E6-8888-B90C1506FF3D}" Type="Ref">/NI-cRIO9075-0165A2E6/Shared Variables.lvlib/Contiguous Memory</Property>
-	<Property Name="varPersistentID:{3E5A84F2-AED1-4557-84B7-7FA3BD12E0C0}" Type="Ref">/NI-cRIO9075-0165A2E6/Shared Variables.lvlib/Actual Loop Period</Property>
-	<Property Name="varPersistentID:{4BCC6948-2A73-4301-8DE2-DEDC833A3869}" Type="Ref">/NI-cRIO9075-0165A2E6/Shared Variables.lvlib/FPGA Mode</Property>
-	<Property Name="varPersistentID:{838A42B8-2C29-4C03-88C9-11A432B1EAE7}" Type="Ref">/NI-cRIO9075-0165A2E6/Shared Variables.lvlib/Input Values</Property>
-	<Property Name="varPersistentID:{90D170FB-F155-4A2A-A669-9B2EDE4C9378}" Type="Ref">/NI-cRIO9075-0165A2E6/Shared Variables.lvlib/CPU Usage</Property>
+	<Property Name="varPersistentID:{0F20BC0B-D115-4CE9-90C6-E648A0B6D7C5}" Type="Ref">/NI-cRIO9075-01756F19/Shared Variables.lvlib/Output Values</Property>
+	<Property Name="varPersistentID:{1360336E-2D43-41E6-8888-B90C1506FF3D}" Type="Ref">/NI-cRIO9075-01756F19/Shared Variables.lvlib/Contiguous Memory</Property>
+	<Property Name="varPersistentID:{3E5A84F2-AED1-4557-84B7-7FA3BD12E0C0}" Type="Ref">/NI-cRIO9075-01756F19/Shared Variables.lvlib/Actual Loop Period</Property>
+	<Property Name="varPersistentID:{4BCC6948-2A73-4301-8DE2-DEDC833A3869}" Type="Ref">/NI-cRIO9075-01756F19/Shared Variables.lvlib/FPGA Mode</Property>
+	<Property Name="varPersistentID:{838A42B8-2C29-4C03-88C9-11A432B1EAE7}" Type="Ref">/NI-cRIO9075-01756F19/Shared Variables.lvlib/Input Values</Property>
+	<Property Name="varPersistentID:{90D170FB-F155-4A2A-A669-9B2EDE4C9378}" Type="Ref">/NI-cRIO9075-01756F19/Shared Variables.lvlib/CPU Usage</Property>
 	<Item Name="My Computer" Type="My Computer">
 		<Property Name="IOScan.Faults" Type="Str"></Property>
 		<Property Name="IOScan.NetVarPeriod" Type="UInt">100</Property>
@@ -149,9 +149,9 @@
 			</Item>
 		</Item>
 	</Item>
-	<Item Name="NI-cRIO9075-0165A2E6" Type="RT CompactRIO">
-		<Property Name="alias.name" Type="Str">NI-cRIO9075-0165A2E6</Property>
-		<Property Name="alias.value" Type="Str">crio-9075-01.me.wisc.edu</Property>
+	<Item Name="NI-cRIO9075-01756F19" Type="RT CompactRIO">
+		<Property Name="alias.name" Type="Str">NI-cRIO9075-01756F19</Property>
+		<Property Name="alias.value" Type="Str">169.254.66.100</Property>
 		<Property Name="CCSymbols" Type="Str">TARGET_TYPE,RT;OS,VxWorks;CPU,PowerPC;DeviceCode,7527;</Property>
 		<Property Name="crio.ControllerPID" Type="Str">7527</Property>
 		<Property Name="crio.family" Type="Str">901x</Property>
@@ -836,6 +836,20 @@ InactivityTimeout 60
 					<Item Name="nirvififoEmulationCreateLock.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/FIFO/Fifo_Resource/nirvififoEmulationCreateLock.vi"/>
 					<Item Name="nirviWaitOnOccurrenceBase.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/occurrence/nirviWaitOnOccurrenceBase.vi"/>
 					<Item Name="niFpgaEmulationVisToLoad.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/Emulation/niFpgaEmulationVisToLoad.vi"/>
+					<Item Name="XDNodeRunTimeDep.lvlib" Type="Library" URL="/&lt;vilib&gt;/Platform/TimedLoop/XDataNode/XDNodeRunTimeDep.lvlib"/>
+					<Item Name="nirviLSCWaitTime.vi" Type="VI" URL="/&lt;vilib&gt;/express/rvi/timingcommon/nirviLSCWaitTime.vi"/>
+					<Item Name="nirviCommon.vi" Type="VI" URL="/&lt;vilib&gt;/express/rvi/timingcommon/nirviCommon.vi"/>
+					<Item Name="niFpgaExecutionStage.ctl" Type="VI" URL="/&lt;vilib&gt;/rvi/eio/common/niFpgaExecutionStage.ctl"/>
+					<Item Name="EIO_ResourceConfig.ctl" Type="VI" URL="/&lt;vilib&gt;/eio/EIO_ResourceConfig.ctl"/>
+					<Item Name="nirviEmuClasses.ctl" Type="VI" URL="/&lt;vilib&gt;/rvi/eio/common/nirviEmuClasses.ctl"/>
+					<Item Name="niLvFpgaEmuInfo.ctl" Type="VI" URL="/&lt;vilib&gt;/rvi/eio/sdk/emulation/public/niLvFpgaEmuInfo.ctl"/>
+					<Item Name="nirviEmuTemplateMethod_errors.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/eio/common/nirviEmuTemplateMethod_errors.vi"/>
+					<Item Name="nirviEmuTemplatePropertyGet_errors.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/eio/common/nirviEmuTemplatePropertyGet_errors.vi"/>
+					<Item Name="nirviEmuTemplatePropertyGet_noerrors.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/eio/common/nirviEmuTemplatePropertyGet_noerrors.vi"/>
+					<Item Name="_nicrio_cRIO-9505_DriveDirection.ctl" Type="VI" URL="/&lt;vilib&gt;/LabVIEW Targets/FPGA/cRIO/cRIO-9505/controls.llb/_nicrio_cRIO-9505_DriveDirection.ctl"/>
+					<Item Name="_nicrio_cRIO-9505_DriveStatus.ctl" Type="VI" URL="/&lt;vilib&gt;/LabVIEW Targets/FPGA/cRIO/cRIO-9505/controls.llb/_nicrio_cRIO-9505_DriveStatus.ctl"/>
+					<Item Name="nirviEmuTemplatePropertySet_errors.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/eio/common/nirviEmuTemplatePropertySet_errors.vi"/>
+					<Item Name="nirviEmuTemplatePropertySet_noerrors.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/eio/common/nirviEmuTemplatePropertySet_noerrors.vi"/>
 				</Item>
 				<Item Name="Build Specifications" Type="Build">
 					<Item Name="FPGA Main" Type="{F4C5E96F-7410-48A5-BB87-3559BC9B167F}">
@@ -866,7 +880,7 @@ InactivityTimeout 60
 						<Property Name="SupportDownload" Type="Bool">true</Property>
 						<Property Name="SupportResourceEstimation" Type="Bool">true</Property>
 						<Property Name="TargetName" Type="Str">FPGA Target</Property>
-						<Property Name="TopLevelVI" Type="Ref">/NI-cRIO9075-0165A2E6/Chassis/FPGA Target/FPGA Main.vi</Property>
+						<Property Name="TopLevelVI" Type="Ref">/NI-cRIO9075-01756F19/Chassis/FPGA Target/FPGA Main.vi</Property>
 					</Item>
 					<Item Name="Current Loop - NI 9505 (FPGA)" Type="{F4C5E96F-7410-48A5-BB87-3559BC9B167F}">
 						<Property Name="AllowEnableRemoval" Type="Bool">false</Property>
@@ -896,7 +910,7 @@ InactivityTimeout 60
 						<Property Name="SupportDownload" Type="Bool">true</Property>
 						<Property Name="SupportResourceEstimation" Type="Bool">true</Property>
 						<Property Name="TargetName" Type="Str">FPGA Target</Property>
-						<Property Name="TopLevelVI" Type="Ref">/NI-cRIO9075-0165A2E6/Chassis/FPGA Target/Current Loop - NI 9505 (FPGA).vi</Property>
+						<Property Name="TopLevelVI" Type="Ref">/NI-cRIO9075-01756F19/Chassis/FPGA Target/Current Loop - NI 9505 (FPGA).vi</Property>
 					</Item>
 				</Item>
 			</Item>
@@ -950,6 +964,19 @@ InactivityTimeout 60
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="Message Queue.lvlib" Type="Library" URL="../support/Message Queue/Message Queue.lvlib"/>
+			<Item Name="niFpgaWaitOnOcc.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/interface/common/niFpgaWaitOnOcc.vi"/>
+			<Item Name="niLvFpga_Close_cRIO-9075.vi" Type="VI" URL="/&lt;vilib&gt;/FPGAPlugInAG/cRIO-9075/niLvFpga_Close_cRIO-9075.vi"/>
+			<Item Name="niLvFpgaFormatErrorSource.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/errors/niLvFpgaFormatErrorSource.vi"/>
+			<Item Name="niLvFpgaWhatHappensToTopLevelVI.ctl" Type="VI" URL="/&lt;vilib&gt;/rvi/errors/niLvFpgaWhatHappensToTopLevelVI.ctl"/>
+			<Item Name="niFpgaNodeNameForErrorReporting.ctl" Type="VI" URL="/&lt;vilib&gt;/rvi/interface/common/niFpgaNodeNameForErrorReporting.ctl"/>
+			<Item Name="niLvFpgaAdjustHostInterfaceError.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/errors/niLvFpgaAdjustHostInterfaceError.vi"/>
+			<Item Name="niLvFpga_Run_cRIO-9075.vi" Type="VI" URL="/&lt;vilib&gt;/FPGAPlugInAG/cRIO-9075/niLvFpga_Run_cRIO-9075.vi"/>
+			<Item Name="niLvFpga_Reset_cRIO-9075.vi" Type="VI" URL="/&lt;vilib&gt;/FPGAPlugInAG/cRIO-9075/niLvFpga_Reset_cRIO-9075.vi"/>
+			<Item Name="niLvFpgaErrorClusterFromErrorCode.vi" Type="VI" URL="/&lt;vilib&gt;/rvi/errors/niLvFpgaErrorClusterFromErrorCode.vi"/>
+			<Item Name="nirviErrorClusterFromErrorCode.vi" Type="VI" URL="/&lt;vilib&gt;/RVI Host/nirviSupport.llb/nirviErrorClusterFromErrorCode.vi"/>
+			<Item Name="nirviWhatTheDeviceIsDoing.ctl" Type="VI" URL="/&lt;vilib&gt;/rvi/ClientSDK/nirviWhatTheDeviceIsDoing.ctl"/>
+			<Item Name="nirio_resource_hc.ctl" Type="VI" URL="/&lt;vilib&gt;/userdefined/High Color/nirio_resource_hc.ctl"/>
+			<Item Name="niLvFpga_Open_cRIO-9075.vi" Type="VI" URL="/&lt;vilib&gt;/FPGAPlugInAG/cRIO-9075/niLvFpga_Open_cRIO-9075.vi"/>
 			<Item Name="nisyscfg.dll" Type="Document" URL="nisyscfg.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
@@ -983,7 +1010,7 @@ InactivityTimeout 60
 				<Property Name="Source[0].itemID" Type="Str">{EBA36140-EC14-4B7C-9050-DA7F1BC35086}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[1].itemID" Type="Ref">/NI-cRIO9075-0165A2E6/RT Main.vi</Property>
+				<Property Name="Source[1].itemID" Type="Ref">/NI-cRIO9075-01756F19/RT Main.vi</Property>
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
 				<Property Name="SourceCount" Type="Int">2</Property>

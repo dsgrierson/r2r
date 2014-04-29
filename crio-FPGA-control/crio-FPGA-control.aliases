@@ -1,8 +1,8 @@
 [My Computer]
-My Computer = "72.33.220.165"
+My Computer = "72.33.222.115"
 
-[NI-cRIO9075-0165A2E6]
-NI-cRIO9075-0165A2E6 = "crio-9075-01.me.wisc.edu"
+[NI-cRIO9075-01756F19]
+NI-cRIO9075-01756F19 = "169.254.66.100"
 
 [RT CompactRIO Target]
 RT CompactRIO Target = "0.0.0.0"
