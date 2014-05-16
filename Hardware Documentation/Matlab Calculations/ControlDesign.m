@@ -40,47 +40,60 @@ K_L12_Pos = K_L12_Pos_m_per_volt/K_ADC_9381 % meter/Volt / Counts/Volt = meters/
 % Compute Gain for the PWM
 PWM_res = 2000 % Number of counts for pwm
 V_rail = 24
-K_PWM = V_rail/PWM_res
+K_PWM = V_rail/PWM_res % Volts/Count
 
 % Firgelli Actuator Force Model (Input Voltage - Output Force)
 K_L12_Force = 2.29181 % mA/N (Slope on Force vs Current Response)
+*********  Change to units of A and check saturation block again
 L12_Offset_I = 12.995 % mA (Current Offset on Force vs Current Response)
 Ra_L12 = 60 % Armature Resistance in Ohms of Firgelli
+Mar = 0.01 % Effective Mass of actuator & roller in Kg
 
 % Firgelli Actuator Position Model
 
-%%*************************************************************************
-%% Design a low pass state filter for the virtual compliance y* command signal
-Ts = 40000/40e6 % from crio-FPGA-control\Globals\Global - Configuration Options.vi
+R2RSystemModel
+sim('R2RSystemModel')
+% find all scope blocks as MATLAB figures & Set to autoscale:
+set(0, 'showhiddenhandles', 'on')
+scope = findobj(0, 'Tag', 'SIMULINK_SIMSCOPE_FIGURE');
+for i=1:length(scope)
+  % this is the callback of the "autoscale" button:
+  simscope('ScopeBar', 'ActionIcon', 'Find', scope(i))
+end
+set(0, 'showhiddenhandles', 'off')
 
-fc = 500
-
-filt = tf(1,[1/(2*pi*fc) 1])
-
-figure; 
-bode(filt)
-h = gcr; % Get the handle for the "plot object root"
-% which is a structure containing the plot properties
-% Set frequency axis to Hz
-h.AxesGrid.Xunits = 'Hz';
-% Set mag axis to abs & phase axis to deg
-h.AxesGrid.Yunits = {'abs','deg'};
-% Turn on the grid
-grid on; % or h.AxesGrid.Grid = "on"
-
-filt_d = c2d(filt,Ts,'zoh');
-filt_d.Variable = 'z^-1'
-filt_d
-
-figure; 
-bode(filt_d)
-h = gcr; % Get the handle for the "plot object root"
-% which is a structure containing the plot properties
-% Set frequency axis to Hz
-h.AxesGrid.Xunits = 'Hz';
-% Set mag axis to abs & phase axis to deg
-h.AxesGrid.Yunits = {'abs','deg'};
-% Turn on the grid
-grid on; % or h.AxesGrid.Grid = "on"
-
-
+% %%*************************************************************************
+% %% Design a low pass state filter for the virtual compliance y* command signal
+% Ts = 40000/40e6 % from crio-FPGA-control\Globals\Global - Configuration Options.vi
+% 
+% fc = 500
+% 
+% filt = tf(1,[1/(2*pi*fc) 1])
+% 
+% figure; 
+% bode(filt)
+% h = gcr; % Get the handle for the "plot object root"
+% % which is a structure containing the plot properties
+% % Set frequency axis to Hz
+% h.AxesGrid.Xunits = 'Hz';
+% % Set mag axis to abs & phase axis to deg
+% h.AxesGrid.Yunits = {'abs','deg'};
+% % Turn on the grid
+% grid on; % or h.AxesGrid.Grid = "on"
+% 
+% filt_d = c2d(filt,Ts,'zoh');
+% filt_d.Variable = 'z^-1'
+% filt_d
+% 
+% figure; 
+% bode(filt_d)
+% h = gcr; % Get the handle for the "plot object root"
+% % which is a structure containing the plot properties
+% % Set frequency axis to Hz
+% h.AxesGrid.Xunits = 'Hz';
+% % Set mag axis to abs & phase axis to deg
+% h.AxesGrid.Yunits = {'abs','deg'};
+% % Turn on the grid
+% grid on; % or h.AxesGrid.Grid = "on"
+% 
+% 
