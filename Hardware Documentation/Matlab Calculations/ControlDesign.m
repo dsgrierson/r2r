@@ -44,15 +44,23 @@ K_PWM = V_rail/PWM_res % Volts/Count
 
 % Firgelli Actuator Force Model (Input Voltage - Output Force)
 K_L12_Force = 2.29181 % mA/N (Slope on Force vs Current Response)
-*********  Change to units of A and check saturation block again
+% *********  Change to units of A and check saturation block again
 L12_Offset_I = 12.995 % mA (Current Offset on Force vs Current Response)
 Ra_L12 = 60 % Armature Resistance in Ohms of Firgelli
-Mar = 0.01 % Effective Mass of actuator & roller in Kg
+Mar = 0.075 % Effective Mass of actuator & roller in Kg
 
-% Firgelli Actuator Position Model
+%% Firgelli Actuator Position Model
 
+%Simulation Model Configuration Parameters
+StartTime = 0;
+StopTime = 60;
+MaxStepSize = 0.1;
+
+Kspring = 10; % Virtual Spring Constant (N/m)
+
+% Open the Model
 R2RSystemModel
-sim('R2RSystemModel')
+sim('R2R_Simulink_Project\R2RSystemModel')
 % find all scope blocks as MATLAB figures & Set to autoscale:
 set(0, 'showhiddenhandles', 'on')
 scope = findobj(0, 'Tag', 'SIMULINK_SIMSCOPE_FIGURE');
