@@ -53,14 +53,14 @@ Mar = 0.075 % Effective Mass of actuator & roller in Kg
 
 %Simulation Model Configuration Parameters
 StartTime = 0;
-StopTime = 60;
+StopTime = 100;
 MaxStepSize = 0.1;
 
-Kspring = 10; % Virtual Spring Constant (N/m)
+Kspring = 10; % Virtual Spring Constant (N/mm)
 
 % Open the Model
 R2RSystemModel
-sim('R2R_Simulink_Project\R2RSystemModel')
+sim('R2RSystemModel');
 % find all scope blocks as MATLAB figures & Set to autoscale:
 set(0, 'showhiddenhandles', 'on')
 scope = findobj(0, 'Tag', 'SIMULINK_SIMSCOPE_FIGURE');
