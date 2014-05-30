@@ -40,7 +40,7 @@ K_L12_Pos = K_L12_Pos_m_per_volt/K_ADC_9381 % meter/Volt / Counts/Volt = meters/
 % Compute Gain for the PWM
 PWM_res = 2000 % Number of counts for pwm
 V_rail = 24
-K_PWM = V_rail/PWM_res % Volts/Count
+K_PWM = PWM_res/V_rail % Count/Volts
 
 % Firgelli Actuator Force Model (Input Voltage - Output Force)
 K_L12_Force = 2.29181 % mA/N (Slope on Force vs Current Response)
@@ -49,18 +49,37 @@ L12_Offset_I = 12.995 % mA (Current Offset on Force vs Current Response)
 Ra_L12 = 60 % Armature Resistance in Ohms of Firgelli
 Mar = 0.075 % Effective Mass of actuator & roller in Kg
 
+
+%% backout backemf constant for the linear motor
+voltage_applied = [1.5 4.5 7.5]
+speed_at_voltage_applied = [0.6 2.16 3.7] % mm/sec
+i = [0.006 0.0085 0.011]
+Vbackemf = (voltage_applied-(i*Ra_L12))
+K_backemf_array = Vbackemf./speed_at_voltage_applied % Units ov Volts-s/mm Volts/(mm/s}
+K_backemf = min( K_backemf_array )
+
 %% Firgelli Actuator Position Model
 
 %Simulation Model Configuration Parameters
 StartTime = 0;
-StopTime = 100;
+StopTime = 20;
 MaxStepSize = 0.1;
 
-Kspring = 10; % Virtual Spring Constant (N/mm)
+Kspring = 55; % Virtual Spring Constant (N/mm)
+Kdamp = 10; % Virtual damper N-s/m (Force/Velocity)
 
-% Open the Model
+% Kspring = 5.110718747826613e+06
+% Kdamp = 3.497032275548465e+09
+PulsePeakAmplitude = 5
+
+% Open Simulink
+simulink
+% Open & sim the Model
 R2RSystemModel
 sim('R2RSystemModel');
+% R2RSystemModel_PosControl
+% sim('R2RSystemModel_PosControl');
+
 % find all scope blocks as MATLAB figures & Set to autoscale:
 set(0, 'showhiddenhandles', 'on')
 scope = findobj(0, 'Tag', 'SIMULINK_SIMSCOPE_FIGURE');
