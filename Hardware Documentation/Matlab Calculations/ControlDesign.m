@@ -31,6 +31,7 @@ R_MaxPos_Range = R_Range*L_nom %
 % reference voltage
 VPot_Range = [0 5] % Position Pot Source Voltage Range
 L_Range = [0 50] % Position Range of actuator in mm
+L_Range_Const = [0 23] % Position Range of actuator is constrained by contact in mm
 K_L12_Pos_mm_per_volt = (max(L_Range)-min(L_Range))/(max(VPot_Range)-min(VPot_Range)) % mm/Volt
 K_L12_Pos_m_per_volt = K_L12_Pos_mm_per_volt/1000 %Convert to m/Volt
 
@@ -64,6 +65,9 @@ K_backemf = min( K_backemf_array )
 StartTime = 0;
 StopTime = 20;
 MaxStepSize = 0.1;
+
+Home = 0; % Home position (mm)
+ContactPoint = 23 % Contact Position in (mm)
 
 Kspring = 55; % Virtual Spring Constant (N/mm)
 Kdamp = 10; % Virtual damper N-s/m (Force/Velocity)
