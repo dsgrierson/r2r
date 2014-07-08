@@ -63,14 +63,14 @@ K_backemf = min( K_backemf_array )
 
 %Simulation Model Configuration Parameters
 StartTime = 0;
-StopTime = 20;
+StopTime = 15;
 MaxStepSize = 0.1;
 
 Home = 0; % Home position (mm)
 ContactPoint = 23 % Contact Position in (mm)
 
 Kspring = 55; % Virtual Spring Constant (N/mm)
-Kdamp = 10; % Virtual damper N-s/m (Force/Velocity)
+Kdamper = 50*1000; % Virtual damper N-s/mm (Force/Velocity) *1000 converts /m to /mm
 
 % Kspring = 5.110718747826613e+06
 % Kdamp = 3.497032275548465e+09
