@@ -30,10 +30,10 @@ K_backemf = 1000*mean( K_backemf_array ); %[Volt/(m/s)]
 % Position Limits
 Home = 0; % Home position (m)
 L_Range = [0 0.050]; % Position Range of actuator (m)
-ContactPoint = 0.006;%0.023; % Contact Position (m)
+ContactPoint = 0.003;%0.023; % Contact Position (m)
 PositionCmdErr = -0.001;  % Modify command to see how controller behaves when
-                     % the position command does not match the contact
-                     % point
+% the position command does not match the contact
+% point
 
 % Physical Damping (reducing model jitter)
 bp = 1;
@@ -86,13 +86,6 @@ K_ForceFB = K_DCM460_HPB20 / K_ADC_9381; % Newton/Volt / Counts/Volt = Newton/Co
 fs = 1e3;
 Ts = 1/fs;
 
-% % Virtual Spring Stiffness
-% kvc = 5e3; %[N/m]
-% kivc = 4000e4; %[N/m-s]
-% 
-% % Modulator for Virtual Spring Compression Command
-% ymod = 0.75e-3;
-
 %% Discrete Time Motion Controller Model
 MOTION_CTRL = 1;
 if MOTION_CTRL
@@ -100,7 +93,7 @@ if MOTION_CTRL
     f_1 = 20; s_1 = 2*pi*f_1; z_1 = exp(-s_1*Ts);
     f_2 = f_1/3; s_2 = 2*pi*f_2; z_2 = exp(-s_2*Ts);
     f_3 = f_2/3; s_3 = 2*pi*f_3; z_3 = exp(-s_3*Ts);
-
+    
     % Calculate Gains
     Jphat = Mar;
     ba = (-(z_1*z_2*z_3)*Jphat + Jphat)/Ts;
@@ -115,7 +108,7 @@ if MOTION_OBSR
     f_1 = 30; s_1 = 2*pi*f_1; z_1 = exp(-s_1*Ts);
     f_2 = f_1/3; s_2 = 2*pi*f_2; z_2 = exp(-s_2*Ts);
     f_3 = f_2/3; s_3 = 2*pi*f_3; z_3 = exp(-s_3*Ts);
-
+    
     % Calculate Gains
     Jphat = Mar;
     bo = (-(z_1*z_2*z_3)*Jphat + Jphat)/Ts;
@@ -129,14 +122,35 @@ if SF
     %Desired Poles
     f_1 = 1; s_1 = 2*pi*f_1; z_1 = exp(-s_1*Ts);
     f_2 = 1; s_2 = 2*pi*f_2; z_2 = exp(-s_2*Ts);
-
+    
     k_2 = (2-(z_1+z_2))/Ts;
     k_1 = (z_1*z_2-1+k_2*Ts)/(k_2*Ts^2);
-
+    
     % Velocity Limit
     v_lim = 0.003;
     % Acceleration Limit
     a_lim = 0.008;%F_max/Mar;
+end
+
+%% Force Control
+FORCE_CTRL = 1;
+if FORCE_CTRL
+    
+    % Actuator Force Command
+    F_act_cmd = 25;
+    
+    % Slew Rate for Ramping on Force Command
+    F_ramp_slope = 5;
+    
+    % Force Control Activation Time
+    F_time = 4;
+    
+    % Virtual Spring Stiffness
+    kvc = 0.1; %[N/m]
+    
+    % Modulator for Virtual Spring Compression Command
+    ymod = 0.75e-3;%.0075;
+    
 end
 
 %% Simulate
@@ -147,10 +161,6 @@ MinStepSize = 1e-6;%0.0005;
 MaxStepSize = 0.001;
 RelTol = 1e-3;
 
-% Actuator Force Command
-F_act_cmd = 5;
-
-
 CalebsModel_v5
 set_param('CalebsModel_v5','AlgebraicLoopSolver','LineSearch')
 sim('CalebsModel_v5')
@@ -159,8 +169,8 @@ sim('CalebsModel_v5')
 set(0, 'showhiddenhandles', 'on')
 scope = findobj(0, 'Tag', 'SIMULINK_SIMSCOPE_FIGURE');
 for i=1:length(scope)
-  % this is the callback of the "autoscale" button:
-  simscope('ScopeBar', 'ActionIcon', 'Find', scope(i))
+    % this is the callback of the "autoscale" button:
+    simscope('ScopeBar', 'ActionIcon', 'Find', scope(i))
 end
 set(0, 'showhiddenhandles', 'off')
 
