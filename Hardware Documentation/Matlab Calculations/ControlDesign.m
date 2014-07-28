@@ -30,18 +30,18 @@ K_backemf = 1000*mean( K_backemf_array ); %[Volt/(m/s)]
 % Position Limits
 Home = 0; % Home position (m)
 L_Range = [0 0.050]; % Position Range of actuator (m)
-ContactPoint = 0.010;%0.023; % Contact Position (m)
+ContactPoint = 0.006;%0.023; % Contact Position (m)
 PositionCmdErr = -0.001;  % Modify command to see how controller behaves when
                      % the position command does not match the contact
                      % point
 
 % Physical Damping (reducing model jitter)
-bp = 1000;
+bp = 1;
 
 % Contact Parameters
 m_surf = 1e3;   %Contact Surface Mass [kg]
-b_surf = 1e5;   %Contact Surface Damping [N-s/m]
-k_surf = 1e8;   %Contact Surface Stiffness [N/m]
+b_surf = 1e3;   %Contact Surface Damping [N-s/m]
+k_surf = 1e6;   %Contact Surface Stiffness [N/m]
 
 %% Position Sensor Stuff
 POS = 0;
@@ -70,15 +70,15 @@ if POS
 end
 
 % Analog Input Gain
-K_ADC_9381 = (4095-0)/(5-0) % Counts/Volt
+K_ADC_9381 = (4095-0)/(5-0); % Counts/Volt
 
 % Compute Gain of Force System (DCM460 2/ HPB-20 Transducer
-g = 9.81 % acceleration of gravity on earth (m/s^2)
-mass = [ 0 20] % mass range in Kg
-F = mass*g % Compute Force Range
-VRange = [ 0 3.7] % Units of Volts
-K_DCM460_HPB20 = (max(F)-min(F))/(max(VRange)-min(VRange)) % Units of Newton/Volt
-K_ForceFB = K_DCM460_HPB20 / K_ADC_9381 % Newton/Volt / Counts/Volt = Newton/Count
+g = 9.81; % acceleration of gravity on earth (m/s^2)
+mass = [ 0 20]; % mass range in Kg
+F = mass*g; % Compute Force Range
+VRange = [ 0 3.7]; % Units of Volts
+K_DCM460_HPB20 = (max(F)-min(F))/(max(VRange)-min(VRange)); % Units of Newton/Volt
+K_ForceFB = K_DCM460_HPB20 / K_ADC_9381; % Newton/Volt / Counts/Volt = Newton/Count
 
 %% Controller
 
@@ -86,35 +86,49 @@ K_ForceFB = K_DCM460_HPB20 / K_ADC_9381 % Newton/Volt / Counts/Volt = Newton/Cou
 fs = 1e3;
 Ts = 1/fs;
 
-% Virtual Spring Stiffness
-ba = 10e3; %[N-s/m]
-kvc = 5e3; %[N/m]
-kivc = 4000e4; %[N/m-s]
-
-% Modulator for Virtual Spring Compression Command
-ymod = 0.75e-3;
+% % Virtual Spring Stiffness
+% kvc = 5e3; %[N/m]
+% kivc = 4000e4; %[N/m-s]
+% 
+% % Modulator for Virtual Spring Compression Command
+% ymod = 0.75e-3;
 
 %% Discrete Time Motion Controller Model
-MOTION_CTRL = 0;
+MOTION_CTRL = 1;
 if MOTION_CTRL
     %Desired Bandwidth
-    f_1 = 100; s_1 = 2*pi*f_1; z_1 = exp(-s_1*Ts);
-    f_2 = f_1/10; s_2 = 2*pi*f_2; z_2 = exp(-s_2*Ts);
-    f_3 = f_2/10; s_3 = 2*pi*f_3; z_3 = exp(-s_3*Ts);
+    f_1 = 20; s_1 = 2*pi*f_1; z_1 = exp(-s_1*Ts);
+    f_2 = f_1/3; s_2 = 2*pi*f_2; z_2 = exp(-s_2*Ts);
+    f_3 = f_2/3; s_3 = 2*pi*f_3; z_3 = exp(-s_3*Ts);
 
     % Calculate Gains
     Jphat = Mar;
     ba = (-(z_1*z_2*z_3)*Jphat + Jphat)/Ts;
-    kvc = (-(z_1*z_2 + z_1*z_3 + z_2*z_3)*Jphat + 3*Jphat - 2*Ts*ba)/(Ts^2);
-    kivc = (-(z_1 + z_2 + z_3)*Jphat + 3*Jphat - Ts*ba - (Ts^2)*kvc)/(Ts^3);
+    ksa = (-(z_1*z_2 + z_1*z_3 + z_2*z_3)*Jphat + 3*Jphat - 2*Ts*ba)/(Ts^2);
+    kisa = (-(z_1 + z_2 + z_3)*Jphat + 3*Jphat - Ts*ba - (Ts^2)*ksa)/(Ts^3);
+end
+
+%% Discrete Time Motion Controller Model
+MOTION_OBSR = 1;
+if MOTION_OBSR
+    %Desired Bandwidth
+    f_1 = 30; s_1 = 2*pi*f_1; z_1 = exp(-s_1*Ts);
+    f_2 = f_1/3; s_2 = 2*pi*f_2; z_2 = exp(-s_2*Ts);
+    f_3 = f_2/3; s_3 = 2*pi*f_3; z_3 = exp(-s_3*Ts);
+
+    % Calculate Gains
+    Jphat = Mar;
+    bo = (-(z_1*z_2*z_3)*Jphat + Jphat)/Ts;
+    kso = (-(z_1*z_2 + z_1*z_3 + z_2*z_3)*Jphat + 3*Jphat - 2*Ts*bo)/(Ts^2);
+    kiso = (-(z_1 + z_2 + z_3)*Jphat + 3*Jphat - Ts*bo - (Ts^2)*kso)/(Ts^3);
 end
 
 %% Command State Filter
 SF = 1;
 if SF
     %Desired Poles
-    f_1 = 0.2; s_1 = 2*pi*f_1; z_1 = exp(-s_1*Ts);
-    f_2 = 0.2; s_2 = 2*pi*f_2; z_2 = exp(-s_2*Ts);
+    f_1 = 1; s_1 = 2*pi*f_1; z_1 = exp(-s_1*Ts);
+    f_2 = 1; s_2 = 2*pi*f_2; z_2 = exp(-s_2*Ts);
 
     k_2 = (2-(z_1+z_2))/Ts;
     k_1 = (z_1*z_2-1+k_2*Ts)/(k_2*Ts^2);
@@ -122,24 +136,24 @@ if SF
     % Velocity Limit
     v_lim = 0.003;
     % Acceleration Limit
-    a_lim = 0.5*F_max/Mar;
+    a_lim = 0.008;%F_max/Mar;
 end
 
 %% Simulate
 %Simulation Model Configuration Parameters
 StartTime = 0;
-StopTime = 20;
-MinStepSize = 0.0005;
-MaxStepSize = 0.1;
-RelTol = 1e-4;
+StopTime = 10;
+MinStepSize = 1e-6;%0.0005;
+MaxStepSize = 0.001;
+RelTol = 1e-3;
 
 % Actuator Force Command
 F_act_cmd = 5;
 
 
-CalebsModel_v3
-set_param('CalebsModel_v3','AlgebraicLoopSolver','LineSearch')
-sim('CalebsModel_v3')
+CalebsModel_v5
+set_param('CalebsModel_v5','AlgebraicLoopSolver','LineSearch')
+sim('CalebsModel_v5')
 
 % find all scope blocks as MATLAB figures & Set to autoscale:
 set(0, 'showhiddenhandles', 'on')
