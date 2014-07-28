@@ -30,13 +30,13 @@ K_backemf = 1000*mean( K_backemf_array ); %[Volt/(m/s)]
 % Position Limits
 Home = 0; % Home position (m)
 L_Range = [0 0.050]; % Position Range of actuator (m)
-ContactPoint = 0.023;%0.023; % Contact Position (m)
-PositionCmdErr = 0.000;  % Modify command to see how controller behaves when
+ContactPoint = 0.010;%0.023; % Contact Position (m)
+PositionCmdErr = -0.001;  % Modify command to see how controller behaves when
                      % the position command does not match the contact
                      % point
 
 % Physical Damping (reducing model jitter)
-bp = 100;
+bp = 1000;
 
 % Contact Parameters
 m_surf = 1e3;   %Contact Surface Mass [kg]
@@ -87,8 +87,9 @@ fs = 1e3;
 Ts = 1/fs;
 
 % Virtual Spring Stiffness
-kvc = 20e3; %[N/m]
-kivc = 200e4; %[N/m-s]
+ba = 10e3; %[N-s/m]
+kvc = 5e3; %[N/m]
+kivc = 4000e4; %[N/m-s]
 
 % Modulator for Virtual Spring Compression Command
 ymod = 0.75e-3;
@@ -97,23 +98,23 @@ ymod = 0.75e-3;
 MOTION_CTRL = 0;
 if MOTION_CTRL
     %Desired Bandwidth
-    f_1 = 150; s_1 = 2*pi*f_1; z_1 = exp(-s_1*Ts);
-    f_2 = f_1/5; s_2 = 2*pi*f_2; z_2 = exp(-s_2*Ts);
-    f_3 = f_2/5; s_3 = 2*pi*f_3; z_3 = exp(-s_3*Ts);
+    f_1 = 100; s_1 = 2*pi*f_1; z_1 = exp(-s_1*Ts);
+    f_2 = f_1/10; s_2 = 2*pi*f_2; z_2 = exp(-s_2*Ts);
+    f_3 = f_2/10; s_3 = 2*pi*f_3; z_3 = exp(-s_3*Ts);
 
     % Calculate Gains
     Jphat = Mar;
     ba = (-(z_1*z_2*z_3)*Jphat + Jphat)/Ts;
-    ksa = (-(z_1*z_2 + z_1*z_3 + z_2*z_3)*Jphat + 3*Jphat - 2*Ts*ba)/(Ts^2);
-    kisa = (-(z_1 + z_2 + z_3)*Jphat + 3*Jphat - Ts*ba - (Ts^2)*ksa)/(Ts^3);
+    kvc = (-(z_1*z_2 + z_1*z_3 + z_2*z_3)*Jphat + 3*Jphat - 2*Ts*ba)/(Ts^2);
+    kivc = (-(z_1 + z_2 + z_3)*Jphat + 3*Jphat - Ts*ba - (Ts^2)*kvc)/(Ts^3);
 end
 
 %% Command State Filter
 SF = 1;
 if SF
     %Desired Poles
-    f_1 = 0.1; s_1 = 2*pi*f_1; z_1 = exp(-s_1*Ts);
-    f_2 = 0.1; s_2 = 2*pi*f_2; z_2 = exp(-s_2*Ts);
+    f_1 = 0.2; s_1 = 2*pi*f_1; z_1 = exp(-s_1*Ts);
+    f_2 = 0.2; s_2 = 2*pi*f_2; z_2 = exp(-s_2*Ts);
 
     k_2 = (2-(z_1+z_2))/Ts;
     k_1 = (z_1*z_2-1+k_2*Ts)/(k_2*Ts^2);
@@ -127,7 +128,7 @@ end
 %% Simulate
 %Simulation Model Configuration Parameters
 StartTime = 0;
-StopTime = 30;
+StopTime = 20;
 MinStepSize = 0.0005;
 MaxStepSize = 0.1;
 RelTol = 1e-4;
