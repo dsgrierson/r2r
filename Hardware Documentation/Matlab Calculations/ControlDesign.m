@@ -30,7 +30,7 @@ K_backemf = 1000*mean( K_backemf_array ); %[Volt/(m/s)]
 % Position Limits
 Home = 0; % Home position (m)
 L_Range = [0 0.050]; % Position Range of actuator (m)
-ContactPoint = 0.003;%0.023; % Contact Position (m)
+ContactPoint = 0.023;%0.023; % Contact Position (m)
 PositionCmdErr = -0.001;  % Modify command to see how controller behaves when
 % the position command does not match the contact
 % point
@@ -41,7 +41,7 @@ bp = 1;
 % Contact Parameters
 m_surf = 1e3;   %Contact Surface Mass [kg]
 b_surf = 1e3;   %Contact Surface Damping [N-s/m]
-k_surf = 1e6;   %Contact Surface Stiffness [N/m]
+k_surf = 1e7;   %Contact Surface Stiffness [N/m]
 
 %% Position Sensor Stuff
 POS = 0;
@@ -95,10 +95,14 @@ if MOTION_CTRL
     f_3 = f_2/3; s_3 = 2*pi*f_3; z_3 = exp(-s_3*Ts);
     
     % Calculate Gains
-    Jphat = Mar;
-    ba = (-(z_1*z_2*z_3)*Jphat + Jphat)/Ts;
-    ksa = (-(z_1*z_2 + z_1*z_3 + z_2*z_3)*Jphat + 3*Jphat - 2*Ts*ba)/(Ts^2);
-    kisa = (-(z_1 + z_2 + z_3)*Jphat + 3*Jphat - Ts*ba - (Ts^2)*ksa)/(Ts^3);
+    % Mass of the Actuator for decoupling purposes
+    Mar_hat = Mar; 
+    % Controller Active Damping calculation
+    ba = (-(z_1*z_2*z_3)*Mar_hat + Mar_hat)/Ts; 
+    % Controller Active Stiffness gain calculation
+    ksa = (-(z_1*z_2 + z_1*z_3 + z_2*z_3)*Mar_hat + 3*Mar_hat - 2*Ts*ba)/(Ts^2);
+    % Controller Integrated Stiffness gain calculation 
+    kisa = (-(z_1 + z_2 + z_3)*Mar_hat + 3*Mar_hat - Ts*ba - (Ts^2)*ksa)/(Ts^3);
 end
 
 %% Discrete Time Motion Controller Model
@@ -110,10 +114,14 @@ if MOTION_OBSR
     f_3 = f_2/3; s_3 = 2*pi*f_3; z_3 = exp(-s_3*Ts);
     
     % Calculate Gains
-    Jphat = Mar;
-    bo = (-(z_1*z_2*z_3)*Jphat + Jphat)/Ts;
-    kso = (-(z_1*z_2 + z_1*z_3 + z_2*z_3)*Jphat + 3*Jphat - 2*Ts*bo)/(Ts^2);
-    kiso = (-(z_1 + z_2 + z_3)*Jphat + 3*Jphat - Ts*bo - (Ts^2)*kso)/(Ts^3);
+    % Estimate of Mass of the Actuator for decoupling purposes
+    Mar_hat; % from above
+    % Observer Active Stiffness gain calculation
+    bo = (-(z_1*z_2*z_3)*Mar_hat + Mar_hat)/Ts;
+    % Observer Active Stiffness gain calculation
+    kso = (-(z_1*z_2 + z_1*z_3 + z_2*z_3)*Mar_hat + 3*Mar_hat - 2*Ts*bo)/(Ts^2);
+    % Observer Integrated Stiffness gain calculation 
+    kiso = (-(z_1 + z_2 + z_3)*Mar_hat + 3*Mar_hat - Ts*bo - (Ts^2)*kso)/(Ts^3);
 end
 
 %% Command State Filter
@@ -129,7 +137,7 @@ if SF
     % Velocity Limit
     v_lim = 0.003;
     % Acceleration Limit
-    a_lim = 0.008;%F_max/Mar;
+    a_lim = 0.008;%F_max/Mar_hat;
 end
 
 %% Force Control
@@ -143,7 +151,7 @@ if FORCE_CTRL
     F_ramp_slope = 5;
     
     % Force Control Activation Time
-    F_time = 4;
+    F_time = 5;
     
     % Virtual Spring Stiffness
     kvc = 0.1; %[N/m]
@@ -156,7 +164,7 @@ end
 %% Simulate
 %Simulation Model Configuration Parameters
 StartTime = 0;
-StopTime = 10;
+StopTime = 20;
 MinStepSize = 1e-6;%0.0005;
 MaxStepSize = 0.001;
 RelTol = 1e-3;
