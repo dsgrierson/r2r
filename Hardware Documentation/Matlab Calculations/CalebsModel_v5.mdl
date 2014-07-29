@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.196"
+    ComputedModelVersion    "1.197"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -40,7 +40,7 @@ Model {
 	  DockPosition		  "Left"
 	  Width			  [50]
 	  Height		  [50]
-	  Filter		  [8]
+	  Filter		  [9]
 	}
 	Object {
 	  $PropName		  "ExplorerBarInfo"
@@ -53,17 +53,17 @@ Model {
 	  $ObjectID		  5
 	  $ClassName		  "Simulink.EditorInfo"
 	  IsActive		  [1]
-	  ViewObjType		  "SimulinkSubsys"
-	  LoadSaveID		  "634"
+	  ViewObjType		  "SimulinkTopLevel"
+	  LoadSaveID		  "0"
 	  Extents		  [1307.0, 694.0]
 	  ZoomFactor		  [1.0]
-	  Offset		  [0.0, 0.0]
+	  Offset		  [5.6843418860808015e-14, 2.8421709430404007e-14]
 	}
       }
       Object {
 	$ObjectID		6
 	IsActive		[1]
-	Location		[1829.0, 85.0, 1173.0, 845.0]
+	Location		[1616.0, 85.0, 1173.0, 845.0]
 	Object {
 	  $PropName		  "ModelBrowserInfo"
 	  $ObjectID		  7
@@ -72,7 +72,7 @@ Model {
 	  DockPosition		  "Left"
 	  Width			  [50]
 	  Height		  [50]
-	  Filter		  [8]
+	  Filter		  [9]
 	}
 	Object {
 	  $PropName		  "ExplorerBarInfo"
@@ -113,9 +113,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "oberstare"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Jul 28 14:44:29 2014"
-  RTWModifiedTimeStamp	  328459312
-  ModelVersionFormat	  "1.%<AutoIncrement:196>"
+  LastModifiedDate	  "Tue Jul 29 08:39:22 2014"
+  RTWModifiedTimeStamp	  328463044
+  ModelVersionFormat	  "1.%<AutoIncrement:197>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1115,7 +1115,7 @@ Model {
   }
   System {
     Name		    "CalebsModel_v5"
-    Location		    [1829, 85, 3002, 930]
+    Location		    [1616, 85, 2789, 930]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1161,7 +1161,7 @@ Model {
       }
       System {
 	Name			"Actuator Physical Model"
-	Location		[1829, 85, 3002, 930]
+	Location		[-8, -8, 1688, 1018]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1614,7 +1614,7 @@ Model {
       }
       System {
 	Name			"Contact & Max Stroke Model"
-	Location		[1829, 85, 3002, 930]
+	Location		[-8, -8, 1688, 1018]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1861,7 +1861,7 @@ Model {
       Position		      [945, 114, 975, 146]
       ZOrder		      -4
       Floating		      off
-      Location		      [1685, 483, 2440, 907]
+      Location		      [15, 546, 770, 970]
       Open		      on
       NumInputPorts	      "1"
       ZoomMode		      "yonly"
@@ -1917,8 +1917,8 @@ Model {
       }
       System {
 	Name			"Digital Controller2"
-	Location		[1829, 85, 3002, 930]
-	Open			on
+	Location		[16, 52, 1373, 890]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1929,7 +1929,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"100"
+	ZoomFactor		"80"
 	Block {
 	  BlockType		  Inport
 	  Name			  "vel_act_hat"
@@ -2157,7 +2157,7 @@ Model {
 	      ZOrder		      -12
 	      Floating		      off
 	      Location		      [6, 406, 665, 767]
-	      Open		      on
+	      Open		      off
 	      NumInputPorts	      "1"
 	      List {
 		ListType		AxesTitles
@@ -2464,7 +2464,7 @@ Model {
 	  Position		  [1035, 38, 1065, 72]
 	  ZOrder		  -12
 	  Floating		  off
-	  Location		  [6, 406, 665, 767]
+	  Location		  [44, 80, 703, 441]
 	  Open			  on
 	  NumInputPorts		  "1"
 	  List {
@@ -2497,7 +2497,7 @@ Model {
 	  ZOrder		  -12
 	  Floating		  off
 	  Location		  [6, 406, 665, 767]
-	  Open			  on
+	  Open			  off
 	  NumInputPorts		  "1"
 	  List {
 	    ListType		    AxesTitles
@@ -3460,10 +3460,9 @@ Model {
       Position		      [945, 274, 975, 296]
       ZOrder		      -4
       Floating		      off
-      Location		      [2301, 763, 2960, 1145]
+      Location		      [846, 89, 1505, 471]
       Open		      on
       NumInputPorts	      "1"
-      ZoomMode		      "xonly"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
@@ -3480,8 +3479,8 @@ Model {
       }
       ShowLegends	      on
       LegendLocations	      "0.81917     0.80846     0.13505    0.094241"
-      YMin		      "-30"
-      YMax		      "65"
+      YMin		      "-1"
+      YMax		      "20"
       SaveName		      "ScopeData5"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
@@ -3511,7 +3510,7 @@ Model {
       }
       System {
 	Name			"Motion Observer"
-	Location		[1829, 85, 3002, 930]
+	Location		[-8, -8, 1688, 1018]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3939,7 +3938,7 @@ Model {
       Position		      [945, 373, 975, 417]
       ZOrder		      -4
       Floating		      off
-      Location		      [1972, 702, 2631, 1063]
+      Location		      [877, 571, 1536, 932]
       Open		      on
       NumInputPorts	      "1"
       List {
@@ -3959,7 +3958,7 @@ Model {
       ShowLegends	      on
       LegendLocations	      "0.65832     0.75392     0.15933     0.14312"
       YMin		      "0"
-      YMax		      "0.00325"
+      YMax		      "0.00525"
       SaveName		      "ScopeData2"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
@@ -3973,8 +3972,8 @@ Model {
       Position		      [945, 538, 975, 582]
       ZOrder		      -4
       Floating		      off
-      Location		      [2625, 692, 3284, 1053]
-      Open		      on
+      Location		      [907, 636, 1566, 997]
+      Open		      off
       NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
@@ -3991,7 +3990,7 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      "0.66287     0.75392     0.29135     0.14312"
+      LegendLocations	      "0.66287     0.75392     0.17299     0.14312"
       YMin		      "-0.0175"
       YMax		      "0.015"
       SaveName		      "ScopeData3"

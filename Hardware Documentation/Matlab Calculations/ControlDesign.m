@@ -30,13 +30,13 @@ K_backemf = 1000*mean( K_backemf_array ); %[Volt/(m/s)]
 % Position Limits
 Home = 0; % Home position (m)
 L_Range = [0 0.050]; % Position Range of actuator (m)
-ContactPoint = 0.023;%0.023; % Contact Position (m)
+ContactPoint = 0.005;%0.023; % Contact Position (m)
 PositionCmdErr = -0.001;  % Modify command to see how controller behaves when
 % the position command does not match the contact
 % point
 
 % Physical Damping (reducing model jitter)
-bp = 1;
+bp = 100;
 
 % Contact Parameters
 m_surf = 1e3;   %Contact Surface Mass [kg]
