@@ -16,7 +16,10 @@ K_L12_Force = 0.00229181;          % A/N (Slope on Force vs Current Response)
 % *********  Change to units of A and check saturation block again
 L12_Offset_I = 0.012995; % A (Current Offset on Force vs Current Response)
 Ra_L12 = 60; % Armature Resistance in Ohms of Firgelli
-Mar = 0.075; % Effective Mass of actuator & roller in Kg
+
+% SHOULD ADD PHYSICAL MASS TO THE SYSTEM TO IMPROVE NO-LOAD BEHAVIOR
+% CALEB MULTIPLIED MASS BY 100.
+Mar = 100*0.075; % Effective Mass of actuator & roller in Kg 
 F_max = 60;  % Maximum Allowable Commanded Force [N]
 
 % Compute Back-EMF Constant
@@ -36,7 +39,7 @@ PositionCmdErr = -0.001;  % Modify command to see how controller behaves when
 % point
 
 % Physical Damping (reducing model jitter)
-bp = 100;
+bp = 1000;
 
 % Contact Parameters
 m_surf = 1e3;   %Contact Surface Mass [kg]
@@ -122,6 +125,11 @@ if MOTION_OBSR
     kso = (-(z_1*z_2 + z_1*z_3 + z_2*z_3)*Mar_hat + 3*Mar_hat - 2*Ts*bo)/(Ts^2);
     % Observer Integrated Stiffness gain calculation 
     kiso = (-(z_1 + z_2 + z_3)*Mar_hat + 3*Mar_hat - Ts*bo - (Ts^2)*kso)/(Ts^3);
+    
+    % Computed Torque Command Feedforward
+    bp_hat = bp;    % Estimated physical damping
+    Mar_hat = Mar;  % Estimated physical equivalent mass
+    
 end
 
 %% Command State Filter
@@ -145,7 +153,7 @@ FORCE_CTRL = 1;
 if FORCE_CTRL
     
     % Actuator Force Command
-    F_act_cmd = 25;
+    F_act_cmd = 1;
     
     % Slew Rate for Ramping on Force Command
     F_ramp_slope = 5;
