@@ -19,7 +19,7 @@ Ra_L12 = 60; % Armature Resistance in Ohms of Firgelli
 
 % SHOULD ADD PHYSICAL MASS TO THE SYSTEM TO IMPROVE NO-LOAD BEHAVIOR
 % CALEB MULTIPLIED MASS BY 100.
-Mar = 100*0.075; % Effective Mass of actuator & roller in Kg 
+Mar = 100*0.075; % Effective Mass of actuator & roller in Kg 7.5e-2 to 7.5 epsilon 1e-3
 F_max = 60;  % Maximum Allowable Commanded Force [N]
 
 % Compute Back-EMF Constant
@@ -39,7 +39,7 @@ PositionCmdErr = -0.001;  % Modify command to see how controller behaves when
 % point
 
 % Physical Damping (reducing model jitter)
-bp = 1000;
+bp = 1000; % N/(m/s) = Ns/m = Kg/s
 
 % Contact Parameters
 m_surf = 1e3;   %Contact Surface Mass [kg]
@@ -97,14 +97,19 @@ if MOTION_CTRL
     f_2 = f_1/3; s_2 = 2*pi*f_2; z_2 = exp(-s_2*Ts);
     f_3 = f_2/3; s_3 = 2*pi*f_3; z_3 = exp(-s_3*Ts);
     
-    % Calculate Gains
+    % Calculate Gains for Feedback Controller
     % Mass of the Actuator for decoupling purposes
     Mar_hat = Mar; 
-    % Controller Active Damping calculation
+    % Controller Active Damping calculation (N-sec/m)
+    % ba is depends on actual Mass estimate so ba will increase as Mass is
+    % increased Range for Mass will set range of ba
     ba = (-(z_1*z_2*z_3)*Mar_hat + Mar_hat)/Ts; 
-    % Controller Active Stiffness gain calculation
+    % Controller Active Stiffness gain calculation (N/m)
+    % ksa depends on Mass estimate and active damping so see those bounds
+    % to bound ksa
     ksa = (-(z_1*z_2 + z_1*z_3 + z_2*z_3)*Mar_hat + 3*Mar_hat - 2*Ts*ba)/(Ts^2);
-    % Controller Integrated Stiffness gain calculation 
+    % Controller Integrated Stiffness gain calculation (N/(m-sec))
+    % kisa depends on Mar_hat, ba, ksa so bound those to see this bound
     kisa = (-(z_1 + z_2 + z_3)*Mar_hat + 3*Mar_hat - Ts*ba - (Ts^2)*ksa)/(Ts^3);
 end
 
@@ -116,17 +121,24 @@ if MOTION_OBSR
     f_2 = f_1/3; s_2 = 2*pi*f_2; z_2 = exp(-s_2*Ts);
     f_3 = f_2/3; s_3 = 2*pi*f_3; z_3 = exp(-s_3*Ts);
     
-    % Calculate Gains
+    % Calculate Gains for Observer
     % Estimate of Mass of the Actuator for decoupling purposes
     Mar_hat; % from above
-    % Observer Active Stiffness gain calculation
+    % Observer Active Stiffness gain calculation (N-sec/m)
+    % bo is depends on actual Mass estimate so bo will increase as Mass is
+    % increased Range for Mass will set range of bo (Probably same dynamic
+    % range as ba up in the controller)
     bo = (-(z_1*z_2*z_3)*Mar_hat + Mar_hat)/Ts;
-    % Observer Active Stiffness gain calculation
+    % Observer Active Stiffness gain calculation (N/m)
+    % kso depends on Mass estimate and active damping so see those bounds
+    % to bound kso (Probably same dynamic range as ba up in the controller)
     kso = (-(z_1*z_2 + z_1*z_3 + z_2*z_3)*Mar_hat + 3*Mar_hat - 2*Ts*bo)/(Ts^2);
-    % Observer Integrated Stiffness gain calculation 
+    % Observer Integrated Stiffness gain calculation (N/(m-sec))
+    % kiso depends on Mar_hat, bo, kso so bound those to see this bound
+    %(Probably same dynamic range as ba up in the controller)
     kiso = (-(z_1 + z_2 + z_3)*Mar_hat + 3*Mar_hat - Ts*bo - (Ts^2)*kso)/(Ts^3);
     
-    % Computed Torque Command Feedforward
+    % Computed Torque Command Feedforward Gains
     bp_hat = bp;    % Estimated physical damping
     Mar_hat = Mar;  % Estimated physical equivalent mass
     
@@ -136,8 +148,13 @@ end
 SF = 1;
 if SF
     %Desired Poles
-    f_1 = 1; s_1 = 2*pi*f_1; z_1 = exp(-s_1*Ts);
-    f_2 = 1; s_2 = 2*pi*f_2; z_2 = exp(-s_2*Ts);
+    f_1 = 1; % Desired Corner Freq (Hz) of 1st pole
+    s_1 = 2*pi*f_1; 
+    z_1 = exp(-s_1*Ts);
+    
+    f_2 = 1; % Desired Corner Freq (Hz) of 2nd pole
+    s_2 = 2*pi*f_2; 
+    z_2 = exp(-s_2*Ts);
     
     k_2 = (2-(z_1+z_2))/Ts;
     k_1 = (z_1*z_2-1+k_2*Ts)/(k_2*Ts^2);
@@ -162,10 +179,10 @@ if FORCE_CTRL
     F_time = 5;
     
     % Virtual Spring Stiffness
-    kvc = 0.1; %[N/m]
+    kvc = 0.1; %[N/m] Dynamic Range 0.001 to 1 epsilon of 0.1 or 0.001
     
     % Modulator for Virtual Spring Compression Command
-    ymod = 0.75e-3;%.0075;
+    ymod = 0.75e-3;%.0075; Dynamic Range of .75e-4 to .75e-2? Epsilon of 0.00001
     
 end
 

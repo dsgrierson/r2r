@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.198"
+    ComputedModelVersion    "1.202"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,7 +30,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [16.0, 52.0, 1769.0, 871.0]
+      Location		      [1680.0, 106.0, 1920.0, 1073.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -45,18 +45,18 @@ Model {
 	$PropName		"ExplorerBarInfo"
 	$ObjectID		4
 	$ClassName		"Simulink.ExplorerBarInfo"
-	Visible			[1]
+	Visible			[0]
       }
       Object {
 	$PropName		"EditorsInfo"
 	$ObjectID		5
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
-	ViewObjType		"SimulinkTopLevel"
-	LoadSaveID		"0"
-	Extents			[1719.0, 697.0]
+	ViewObjType		"SimulinkSubsys"
+	LoadSaveID		"634"
+	Extents			[1870.0, 929.0]
 	ZoomFactor		[1.0]
-	Offset			[0.0, 0.0]
+	Offset			[23.5, -10.441666708389789]
       }
     }
   }
@@ -64,11 +64,11 @@ Model {
   Creator		  "secrest"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "secrest"
+  LastModifiedBy	  "oberstare"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Jul 30 09:56:28 2014"
-  RTWModifiedTimeStamp	  328614798
-  ModelVersionFormat	  "1.%<AutoIncrement:198>"
+  LastModifiedDate	  "Fri Aug 01 12:20:58 2014"
+  RTWModifiedTimeStamp	  328793885
+  ModelVersionFormat	  "1.%<AutoIncrement:202>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1055,8 +1055,8 @@ Model {
   }
   System {
     Name		    "CalebsModel_v5"
-    Location		    [16, 52, 1785, 923]
-    Open		    on
+    Location		    [1680, 106, 3600, 1179]
+    Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
     ScreenColor		    "white"
@@ -1067,7 +1067,7 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "150"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "868"
     Block {
@@ -1101,7 +1101,7 @@ Model {
       }
       System {
 	Name			"Actuator Physical Model"
-	Location		[16, 52, 1785, 923]
+	Location		[1680, 106, 3600, 1179]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1113,7 +1113,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"100"
+	ZoomFactor		"150"
 	Block {
 	  BlockType		  Inport
 	  Name			  "PWM_Count"
@@ -1268,7 +1268,7 @@ Model {
 	  Position		  [265, 59, 295, 91]
 	  ZOrder		  155
 	  Floating		  off
-	  Location		  [1, 602, 1012, 1199]
+	  Location		  [6, 447, 1017, 1044]
 	  Open			  on
 	  NumInputPorts		  "1"
 	  ZoomMode		  "yonly"
@@ -1555,7 +1555,7 @@ Model {
       }
       System {
 	Name			"Contact & Max Stroke Model"
-	Location		[-8, -8, 1688, 1018]
+	Location		[1680, 106, 3600, 1179]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1567,7 +1567,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"100"
+	ZoomFactor		"200"
 	Block {
 	  BlockType		  Inport
 	  Name			  "X_act"
@@ -1802,7 +1802,7 @@ Model {
       Position		      [945, 114, 975, 146]
       ZOrder		      -4
       Floating		      off
-      Location		      [1, 602, 1012, 1199]
+      Location		      [6, 447, 1017, 1044]
       Open		      on
       NumInputPorts	      "1"
       ZoomMode		      "yonly"
@@ -1831,7 +1831,7 @@ Model {
     }
     Block {
       BlockType		      SubSystem
-      Name		      "Digital Controller2"
+      Name		      "Digital Controller"
       SID		      "634"
       Ports		      [3, 4]
       Position		      [90, 114, 255, 181]
@@ -1857,9 +1857,9 @@ Model {
 	DataLoggingNameMode	"SignalName"
       }
       System {
-	Name			"Digital Controller2"
-	Location		[16, 52, 1785, 923]
-	Open			off
+	Name			"Digital Controller"
+	Location		[1680, 106, 3600, 1179]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1870,7 +1870,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"80"
+	ZoomFactor		"100"
 	Block {
 	  BlockType		  Inport
 	  Name			  "vel_act_hat"
@@ -1892,7 +1892,7 @@ Model {
 	}
 	Block {
 	  BlockType		  Inport
-	  Name			  "Contact Force"
+	  Name			  "Measured\nContact \nForce"
 	  SID			  "838"
 	  Position		  [290, 243, 320, 257]
 	  ZOrder		  -3
@@ -1922,7 +1922,7 @@ Model {
 	  }
 	  System {
 	    Name		    "Command State Filter\nSmoothes Trajectory\nKeeps initial impact force down"
-	    Location		    [1829, 85, 3002, 930]
+	    Location		    [1680, 106, 3600, 1179]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -1934,7 +1934,7 @@ Model {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
+	    ZoomFactor		    "200"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "X_act*_uf"
@@ -1942,6 +1942,12 @@ Model {
 	      Position		      [25, 193, 55, 207]
 	      ZOrder		      -1
 	      IconDisplay	      "Port number"
+	      Port {
+		PortNumber		1
+		Name			"X_act*_uf"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
 	    }
 	    Block {
 	      BlockType		      Abs
@@ -1951,6 +1957,39 @@ Model {
 	      ZOrder		      -3
 	      ShowName		      off
 	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Scope
+	      Name		      "Accel Command"
+	      SID		      "835"
+	      Ports		      [1]
+	      Position		      [770, 58, 800, 92]
+	      ZOrder		      -12
+	      Floating		      off
+	      Location		      [6, 406, 665, 767]
+	      Open		      off
+	      NumInputPorts	      "1"
+	      List {
+		ListType		AxesTitles
+		axes1			"theta_rm Filter"
+	      }
+	      List {
+		ListType		ScopeGraphics
+		FigureColor		"[0.5 0.5 0.5]"
+		AxesColor		"[0 0 0]"
+		AxesTickColor		"[1 1 1]"
+		LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
+		LineStyles		"-|-|-|-|-|-"
+		LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
+		MarkerStyles		"none|none|none|none|none|none"
+	      }
+	      ShowLegends	      off
+	      YMin		      "-0.006"
+	      YMax		      "0.006"
+	      SaveName		      "ScopeData6"
+	      DataFormat	      "StructureWithTime"
+	      LimitDataPoints	      off
+	      SampleTime	      "0"
 	    }
 	    Block {
 	      BlockType		      Constant
@@ -1984,6 +2023,12 @@ Model {
 	      SampleTime	      "-1"
 	      ICPrevOutput	      "DiscIntNeverNeededParam"
 	      ICPrevScaledInput	      "DiscIntNeverNeededParam"
+	      Port {
+		PortNumber		1
+		Name			"X_act*"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
 	    }
 	    Block {
 	      BlockType		      Mux
@@ -2006,6 +2051,12 @@ Model {
 	      InputSameDT	      off
 	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
 	      SaturateOnIntegerOverflow	off
+	      Port {
+		PortNumber		1
+		Name			"Accel_act*"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
 	    }
 	    Block {
 	      BlockType		      RelationalOperator
@@ -2030,6 +2081,12 @@ Model {
 	      InputPortMap	      "u0"
 	      UpperLimit	      "v_lim"
 	      LowerLimit	      "-v_lim"
+	      Port {
+		PortNumber		1
+		Name			"Vel_act*"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
 	    }
 	    Block {
 	      BlockType		      Saturate
@@ -2067,62 +2124,6 @@ Model {
 	      SampleTime	      "0"
 	    }
 	    Block {
-	      BlockType		      Scope
-	      Name		      "State_Filter1"
-	      SID		      "820"
-	      Ports		      [1]
-	      Position		      [770, 123, 800, 157]
-	      ZOrder		      -12
-	      Floating		      off
-	      Location		      [1, 325, 569, 767]
-	      Open		      off
-	      NumInputPorts	      "1"
-	      List {
-		ListType		AxesTitles
-		axes1			"theta_rm Filter"
-	      }
-	      ShowLegends	      off
-	      YMin		      "-0.0001"
-	      YMax		      "0.0001"
-	      SaveName		      "ScopeData1"
-	      DataFormat	      "StructureWithTime"
-	      LimitDataPoints	      off
-	      SampleTime	      "0"
-	    }
-	    Block {
-	      BlockType		      Scope
-	      Name		      "State_Filter2"
-	      SID		      "835"
-	      Ports		      [1]
-	      Position		      [770, 58, 800, 92]
-	      ZOrder		      -12
-	      Floating		      off
-	      Location		      [6, 406, 665, 767]
-	      Open		      off
-	      NumInputPorts	      "1"
-	      List {
-		ListType		AxesTitles
-		axes1			"theta_rm Filter"
-	      }
-	      List {
-		ListType		ScopeGraphics
-		FigureColor		"[0.5 0.5 0.5]"
-		AxesColor		"[0 0 0]"
-		AxesTickColor		"[1 1 1]"
-		LineColors		"[1 1 0;1 0 1;0 1 1;1 0 0;0 1 0;0 0 1]"
-		LineStyles		"-|-|-|-|-|-"
-		LineWidths		"[0.5 0.5 0.5 0.5 0.5 0.5]"
-		MarkerStyles		"none|none|none|none|none|none"
-	      }
-	      ShowLegends	      off
-	      YMin		      "-0.006"
-	      YMax		      "0.006"
-	      SaveName		      "ScopeData6"
-	      DataFormat	      "StructureWithTime"
-	      LimitDataPoints	      off
-	      SampleTime	      "0"
-	    }
-	    Block {
 	      BlockType		      Sum
 	      Name		      "Sum"
 	      SID		      "805"
@@ -2149,6 +2150,29 @@ Model {
 	      InputSameDT	      off
 	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
 	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Scope
+	      Name		      "Vel Command"
+	      SID		      "820"
+	      Ports		      [1]
+	      Position		      [770, 123, 800, 157]
+	      ZOrder		      -12
+	      Floating		      off
+	      Location		      [1, 325, 569, 767]
+	      Open		      off
+	      NumInputPorts	      "1"
+	      List {
+		ListType		AxesTitles
+		axes1			"theta_rm Filter"
+	      }
+	      ShowLegends	      off
+	      YMin		      "-0.0001"
+	      YMax		      "0.0001"
+	      SaveName		      "ScopeData1"
+	      DataFormat	      "StructureWithTime"
+	      LimitDataPoints	      off
+	      SampleTime	      "0"
 	    }
 	    Block {
 	      BlockType		      Gain
@@ -2249,6 +2273,7 @@ Model {
 	      }
 	    }
 	    Line {
+	      Name		      "X_act*"
 	      ZOrder		      9
 	      SrcBlock		      "Discrete-Time\nIntegrator1"
 	      SrcPort		      1
@@ -2263,6 +2288,7 @@ Model {
 		Points			[0, 100]
 		Branch {
 		  ZOrder		  12
+		  Labels		  [1, 1]
 		  Points		  [-485, 0]
 		  DstBlock		  "Sum"
 		  DstPort		  2
@@ -2290,6 +2316,7 @@ Model {
 	      DstPort		      2
 	    }
 	    Line {
+	      Name		      "Accel_act*"
 	      ZOrder		      16
 	      SrcBlock		      "Product"
 	      SrcPort		      1
@@ -2301,12 +2328,14 @@ Model {
 	      }
 	      Branch {
 		ZOrder			18
+		Labels			[2, 1]
 		Points			[0, 40]
-		DstBlock		"State_Filter2"
+		DstBlock		"Accel Command"
 		DstPort			1
 	      }
 	    }
 	    Line {
+	      Name		      "Vel_act*"
 	      ZOrder		      19
 	      SrcBlock		      "Saturation"
 	      SrcPort		      1
@@ -2326,8 +2355,9 @@ Model {
 		}
 		Branch {
 		  ZOrder		  23
+		  Labels		  [2, 1]
 		  Points		  [0, 25]
-		  DstBlock		  "State_Filter1"
+		  DstBlock		  "Vel Command"
 		  DstPort		  1
 		}
 	      }
@@ -2357,6 +2387,7 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
+	      Name		      "X_act*_uf"
 	      ZOrder		      28
 	      SrcBlock		      "X_act*_uf"
 	      SrcPort		      1
@@ -2368,6 +2399,7 @@ Model {
 	      }
 	      Branch {
 		ZOrder			30
+		Labels			[2, 1]
 		Points			[0, 120]
 		DstBlock		"Mux"
 		DstPort			2
@@ -2438,7 +2470,7 @@ Model {
 	  Position		  [1340, 358, 1370, 392]
 	  ZOrder		  -12
 	  Floating		  off
-	  Location		  [1, 602, 1012, 1199]
+	  Location		  [6, 447, 1017, 1044]
 	  Open			  on
 	  NumInputPorts		  "1"
 	  List {
@@ -2461,6 +2493,22 @@ Model {
 	  DataFormat		  "StructureWithTime"
 	  LimitDataPoints	  off
 	  SampleTime		  "0"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Force \nCommand \nRamp"
+	  SID			  "855"
+	  Ports			  [0, 1]
+	  Position		  [35, 155, 65, 185]
+	  ZOrder		  -32
+	  LibraryVersion	  "1.287"
+	  SourceBlock		  "simulink/Sources/Ramp"
+	  SourceType		  "Ramp"
+	  ContentPreviewEnabled	  off
+	  slope			  "F_ramp_slope"
+	  start			  "F_time"
+	  X0			  "0"
+	  VectorParams1D	  on
 	}
 	Block {
 	  BlockType		  Step
@@ -2670,6 +2718,22 @@ Model {
 	  OutDataTypeStr	  "boolean"
 	}
 	Block {
+	  BlockType		  Reference
+	  Name			  "Position\nCommand\nRamp"
+	  SID			  "826"
+	  Ports			  [0, 1]
+	  Position		  [75, 570, 105, 600]
+	  ZOrder		  -31
+	  LibraryVersion	  "1.287"
+	  SourceBlock		  "simulink/Sources/Ramp"
+	  SourceType		  "Ramp"
+	  ContentPreviewEnabled	  off
+	  slope			  "0.8*v_lim"
+	  start			  "1"
+	  X0			  "0"
+	  VectorParams1D	  on
+	}
+	Block {
 	  BlockType		  Product
 	  Name			  "Product"
 	  SID			  "852"
@@ -2710,36 +2774,16 @@ Model {
 	  }
 	}
 	Block {
-	  BlockType		  Reference
-	  Name			  "Ramp"
-	  SID			  "826"
-	  Ports			  [0, 1]
-	  Position		  [75, 570, 105, 600]
-	  ZOrder		  -31
-	  LibraryVersion	  "1.287"
-	  SourceBlock		  "simulink/Sources/Ramp"
-	  SourceType		  "Ramp"
-	  ContentPreviewEnabled	  off
-	  slope			  "0.8*v_lim"
-	  start			  "1"
-	  X0			  "0"
-	  VectorParams1D	  on
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Ramp1"
-	  SID			  "855"
-	  Ports			  [0, 1]
-	  Position		  [35, 155, 65, 185]
-	  ZOrder		  -32
-	  LibraryVersion	  "1.287"
-	  SourceBlock		  "simulink/Sources/Ramp"
-	  SourceType		  "Ramp"
-	  ContentPreviewEnabled	  off
-	  slope			  "F_ramp_slope"
-	  start			  "F_time"
-	  X0			  "0"
-	  VectorParams1D	  on
+	  BlockType		  Saturate
+	  Name			  "Saturate\nForce\nCommand"
+	  SID			  "856"
+	  Ports			  [1, 1]
+	  Position		  [110, 155, 140, 185]
+	  ZOrder		  -14
+	  InputPortMap		  "u0"
+	  UpperLimit		  "F_act_cmd"
+	  LowerLimit		  "0"
+	  SampleTime		  "Ts"
 	}
 	Block {
 	  BlockType		  Saturate
@@ -2750,18 +2794,6 @@ Model {
 	  ZOrder		  -14
 	  InputPortMap		  "u0"
 	  UpperLimit		  "ContactPoint+PositionCmdErr"
-	  LowerLimit		  "0"
-	  SampleTime		  "Ts"
-	}
-	Block {
-	  BlockType		  Saturate
-	  Name			  "Saturate\nPosition\nCommand1"
-	  SID			  "856"
-	  Ports			  [1, 1]
-	  Position		  [110, 155, 140, 185]
-	  ZOrder		  -14
-	  InputPortMap		  "u0"
-	  UpperLimit		  "F_act_cmd"
 	  LowerLimit		  "0"
 	  SampleTime		  "Ts"
 	}
@@ -3220,7 +3252,7 @@ Model {
 	}
 	Line {
 	  ZOrder		  27
-	  SrcBlock		  "Ramp"
+	  SrcBlock		  "Position\nCommand\nRamp"
 	  SrcPort		  1
 	  DstBlock		  "Saturate\nPosition\nCommand"
 	  DstPort		  1
@@ -3257,7 +3289,7 @@ Model {
 	}
 	Line {
 	  ZOrder		  34
-	  SrcBlock		  "Contact Force"
+	  SrcBlock		  "Measured\nContact \nForce"
 	  SrcPort		  1
 	  DstBlock		  "Zero-Order\nHold2"
 	  DstPort		  1
@@ -3399,14 +3431,14 @@ Model {
 	}
 	Line {
 	  ZOrder		  56
-	  SrcBlock		  "Ramp1"
+	  SrcBlock		  "Force \nCommand \nRamp"
 	  SrcPort		  1
-	  DstBlock		  "Saturate\nPosition\nCommand1"
+	  DstBlock		  "Saturate\nForce\nCommand"
 	  DstPort		  1
 	}
 	Line {
 	  ZOrder		  57
-	  SrcBlock		  "Saturate\nPosition\nCommand1"
+	  SrcBlock		  "Saturate\nForce\nCommand"
 	  SrcPort		  1
 	  Points		  [5, 0]
 	  Branch {
@@ -3502,7 +3534,7 @@ Model {
       Position		      [945, 274, 975, 296]
       ZOrder		      -4
       Floating		      off
-      Location		      [1, 602, 1012, 1199]
+      Location		      [6, 447, 1017, 1044]
       Open		      on
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
@@ -3553,7 +3585,7 @@ Model {
       }
       System {
 	Name			"Motion Observer"
-	Location		[16, 52, 1785, 923]
+	Location		[1680, 106, 3600, 1179]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3565,7 +3597,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"100"
+	ZoomFactor		"200"
 	Block {
 	  BlockType		  Inport
 	  Name			  "X_act_fb"
@@ -3981,7 +4013,7 @@ Model {
       Position		      [945, 373, 975, 417]
       ZOrder		      -4
       Floating		      off
-      Location		      [1, 602, 1012, 1199]
+      Location		      [6, 447, 1017, 1044]
       Open		      on
       NumInputPorts	      "1"
       List {
@@ -4015,7 +4047,7 @@ Model {
       Position		      [945, 533, 975, 577]
       ZOrder		      -4
       Floating		      off
-      Location		      [1, 602, 1012, 1199]
+      Location		      [1728, 216, 2208, 643]
       Open		      on
       NumInputPorts	      "1"
       List {
@@ -4033,7 +4065,7 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      "0.66287     0.75392     0.11276    0.086544"
+      LegendLocations	      "0.6005     0.73669      0.2375       0.121"
       YMin		      "-0.00025"
       YMax		      "0.0025"
       SaveName		      "ScopeData3"
@@ -4043,7 +4075,7 @@ Model {
     }
     Line {
       ZOrder		      1
-      SrcBlock		      "Digital Controller2"
+      SrcBlock		      "Digital Controller"
       SrcPort		      1
       DstBlock		      "Actuator Physical Model"
       DstPort		      1
@@ -4119,7 +4151,7 @@ Model {
 	Branch {
 	  ZOrder		  14
 	  Points		  [-275, 0]
-	  DstBlock		  "Digital Controller2"
+	  DstBlock		  "Digital Controller"
 	  DstPort		  3
 	}
       }
@@ -4139,7 +4171,7 @@ Model {
       Branch {
 	ZOrder			17
 	Points			[0, -89; -700, 0; 0, -156]
-	DstBlock		"Digital Controller2"
+	DstBlock		"Digital Controller"
 	DstPort			2
       }
     }
@@ -4173,7 +4205,7 @@ Model {
       Branch {
 	ZOrder			22
 	Points			[-715, 0; 0, -350]
-	DstBlock		"Digital Controller2"
+	DstBlock		"Digital Controller"
 	DstPort			1
       }
     }
@@ -4181,7 +4213,7 @@ Model {
       Name		      "F_act*"
       ZOrder		      23
       Labels		      [1, 1]
-      SrcBlock		      "Digital Controller2"
+      SrcBlock		      "Digital Controller"
       SrcPort		      2
       Points		      [50, 0; 0, 135]
       Branch {
@@ -4200,7 +4232,7 @@ Model {
       Name		      "X_act*"
       ZOrder		      26
       Labels		      [3, 1]
-      SrcBlock		      "Digital Controller2"
+      SrcBlock		      "Digital Controller"
       SrcPort		      3
       Points		      [20, 0; 0, 282; 516, 0; 0, -12]
       DstBlock		      "Mux"
@@ -4227,7 +4259,7 @@ Model {
       Name		      "Vel_act*"
       ZOrder		      29
       Labels		      [3, 1]
-      SrcBlock		      "Digital Controller2"
+      SrcBlock		      "Digital Controller"
       SrcPort		      4
       Points		      [5, 0; 0, 415]
       DstBlock		      "Mux1"
