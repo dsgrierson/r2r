@@ -20,16 +20,6 @@
 		<Property Name="type" Type="Str">Network</Property>
 		<Property Name="typeDesc" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!!J*1!!!"-!A!!!!!!"!!V!#A!'2'^V9GRF!!!"!!!!!!!!!!!!!!!!!!!!!!!!</Property>
 	</Item>
-	<Item Name="Controller Calcs" Type="Variable">
-		<Property Name="featurePacks" Type="Str">Network</Property>
-		<Property Name="Network:UseBinding" Type="Str">False</Property>
-		<Property Name="Network:UseBuffering" Type="Str">False</Property>
-		<Property Name="numTypedefs" Type="UInt">1</Property>
-		<Property Name="type" Type="Str">Network</Property>
-		<Property Name="typedefName1" Type="Str">Controller Calcs.ctl</Property>
-		<Property Name="typedefPath1" Type="PathRel">../../controls/Controller Calcs.ctl</Property>
-		<Property Name="typeDesc" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!'8EQ%!!"-!A!!!!!!&amp;!%:!8Q.2!"1!!!!(!!%!!1!!!!@``````````Q!!!"-!!!!'!!!!!!!(``]!!!!"````^!!!!!!!!!!"#7*B)#BL:S^T+1"'1&amp;]$51!5!!!!"Q!"!!%!!!!(``````````]!!!!4!!!!"A!!!!!!"```!!!!!@````1!!!!!!!!!!1FL=W%A+%YP&lt;3E!3%"@!V%!&amp;!!!!!=!!1!"!!!!"```````````!!!!%Q!!!!9!!!!!!!@``Q!!!!(````U!!!!!!!!!!%+;WFT93!I4C^N+1!!4E"@!V%!&amp;!!!!!Y!!1!"!!!!$P``````````!!!!%Q!!!!U!!!!!!!@``Q!!!!(````\!!!!!!!!!!%1;V^C97.L:7VG)#B7=S^N+1!!11$R!!!!!!!!!!%51W^O&gt;(*P&lt;'RF=C"$97RD=SZD&gt;'Q!*%"1!!1!!!!"!!)!!R"$&lt;WZU=G^M&lt;'6S)%.B&lt;'.T!!!"!!1!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</Property>
-	</Item>
 	<Item Name="CPU Usage" Type="Variable">
 		<Property Name="featurePacks" Type="Str">Network</Property>
 		<Property Name="Network:UseBinding" Type="Str">False</Property>
@@ -57,26 +47,6 @@
 		<Property Name="typedefName1" Type="Str">Raw Values.ctl</Property>
 		<Property Name="typedefPath1" Type="PathRel">../../controls/Raw Values.ctl</Property>
 		<Property Name="typeDesc" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!'"@1%!!"-!A!!!!!!&amp;!%:!8Q.2!"1!!!!(!!%!!1!!!!@``````````Q!!!"-!!!!'!!!!!!!(``]!!!!"````^!!!!!!!!!!"#5.I97ZO:7QA-!"'1&amp;]$51!5!!!!"Q!"!!%!!!!(``````````]!!!!4!!!!"A!!!!!!"```!!!!!@````1!!!!!!!!!!1F$;'&amp;O&lt;G6M)$%!2E"@!V%!&amp;!!!!!=!!1!"!!!!"```````````!!!!%Q!!!!9!!!!!!!@``Q!!!!(````U!!!!!!!!!!%*1WBB&lt;GZF&lt;#!S!%:!8Q.2!"1!!!!/!!%!!1!!!!\``````````Q!!!"-!!!!.!!!!!!!(``]!!!!"````_Q!!!!!!!!!"#5.I97ZO:7QA-Q!V!0%!!!!!!!!!!1Z398=A6G&amp;M&gt;76T,G.U&lt;!!?1&amp;!!"!!!!!%!!A!$#F*B&gt;S"797RV:8-!!!%!"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</Property>
-	</Item>
-	<Item Name="Observer Calcs" Type="Variable">
-		<Property Name="featurePacks" Type="Str">Network</Property>
-		<Property Name="Network:UseBinding" Type="Str">False</Property>
-		<Property Name="Network:UseBuffering" Type="Str">False</Property>
-		<Property Name="numTypedefs" Type="UInt">1</Property>
-		<Property Name="type" Type="Str">Network</Property>
-		<Property Name="typedefName1" Type="Str">Observer Calcs.ctl</Property>
-		<Property Name="typedefPath1" Type="PathRel">../../controls/Observer Calcs.ctl</Property>
-		<Property Name="typeDesc" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!%\.Q%!!"-!A!!!!!!%!%:!8Q.2!"1!!!!(!!%!!1!!!!@``````````Q!!!"-!!!!'!!!!!!!(``]!!!!"````^!!!!!!!!!!"#7*P)#BL:S^T+1"'1&amp;]$51!5!!!!"Q!"!!%!!!!(``````````]!!!!4!!!!"A!!!!!!"```!!!!!@````1!!!!!!!!!!1FL=W]A+%YP&lt;3E!3%"@!V%!&amp;!!!!!=!!1!"!!!!"```````````!!!!%Q!!!!9!!!!!!!@``Q!!!!(````U!!!!!!!!!!%+;WFT&lt;S!I4C^N+1!!/Q$R!!!!!!!!!!%34W*T:8*W:8)A1W&amp;M9X-O9X2M!#"!5!!$!!!!!1!#$E^C=W6S&gt;G6S)%.B&lt;'.T!!!"!!-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</Property>
-	</Item>
-	<Item Name="Other Calcs" Type="Variable">
-		<Property Name="featurePacks" Type="Str">Network</Property>
-		<Property Name="Network:UseBinding" Type="Str">False</Property>
-		<Property Name="Network:UseBuffering" Type="Str">False</Property>
-		<Property Name="numTypedefs" Type="UInt">1</Property>
-		<Property Name="type" Type="Str">Network</Property>
-		<Property Name="typedefName1" Type="Str">Other Calcs.ctl</Property>
-		<Property Name="typedefPath1" Type="PathRel">../../controls/Other Calcs.ctl</Property>
-		<Property Name="typeDesc" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!'%A!%!!"-!A!!!!!!&amp;!%:!8Q.2!"1!!!!(!!%!!1!!!!@``````````Q!!!"-!!!!'!!!!!!!(``]!!!!"````^!!!!!!!!!!"#7N@-3!I-3^T+1"'1&amp;]$51!5!!!!"Q!"!!%!!!!(``````````]!!!!4!!!!"A!!!!!!"```!!!!!@````1!!!!!!!!!!1FL8T)A+$%P=SE!2E"@!V%!&amp;!!!!!=!!1!"!!!!"```````````!!!!%Q!!!!9!!!!!!!@``Q!!!!(````U!!!!!!!!!!%*2H*S)#B/,X-J!%B!8Q.2!"1!!!!/!!%!!1!!!!\``````````Q!!!"-!!!!.!!!!!!!(``]!!!!"````_Q!!!!!!!!!"#HBS=C!I&lt;7UP=SE!!$9!]1!!!!!!!!!"$U^U;'6S)%.B&lt;'.T,G.U&lt;!!?1&amp;!!"!!!!!%!!A!$#U^U;'6S)%.B&lt;'.T!!%!"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</Property>
 	</Item>
 	<Item Name="Output Values" Type="Variable">
 		<Property Name="featurePacks" Type="Str">Network</Property>
