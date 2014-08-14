@@ -46,7 +46,7 @@
 		<Property Name="type" Type="Str">Network</Property>
 		<Property Name="typedefName1" Type="Str">Raw Values.ctl</Property>
 		<Property Name="typedefPath1" Type="PathRel">../../controls/Raw Values.ctl</Property>
-		<Property Name="typeDesc" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!'"@1%!!"-!A!!!!!!&amp;!%:!8Q.2!"1!!!!(!!%!!1!!!!@``````````Q!!!"-!!!!'!!!!!!!(``]!!!!"````^!!!!!!!!!!"#5.I97ZO:7QA-!"'1&amp;]$51!5!!!!"Q!"!!%!!!!(``````````]!!!!4!!!!"A!!!!!!"```!!!!!@````1!!!!!!!!!!1F$;'&amp;O&lt;G6M)$%!2E"@!V%!&amp;!!!!!=!!1!"!!!!"```````````!!!!%Q!!!!9!!!!!!!@``Q!!!!(````U!!!!!!!!!!%*1WBB&lt;GZF&lt;#!S!%:!8Q.2!"1!!!!/!!%!&amp;!!!!!\```````A!!!!"!"1!!!!/!!!!!!!(``]!!!!"````_Q!!!!!!!!!"#5.I97ZO:7QA-Q!V!0%!!!!!!!!!!1Z398=A6G&amp;M&gt;76T,G.U&lt;!!?1&amp;!!"!!!!!%!!A!$#F*B&gt;S"797RV:8-!!!%!"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</Property>
+		<Property Name="typeDesc" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!'"@1%!!"-!A!!!!!!&amp;!%:!8Q.2!"1!!!!(!!%!!1!!!!@``````````Q!!!"-!!!!'!!!!!!!(``]!!!!"````^!!!!!!!!!!"#5.I97ZO:7QA-!"'1&amp;]$51!5!!!!"Q!"!!%!!!!(``````````]!!!!4!!!!"A!!!!!!"```!!!!!@````1!!!!!!!!!!1F$;'&amp;O&lt;G6M)$%!2E"@!V%!&amp;!!!!!=!!1!"!!!!"```````````!!!!%Q!!!!9!!!!!!!@``Q!!!!(````U!!!!!!!!!!%*1WBB&lt;GZF&lt;#!S!%:!8Q.2!"1!!!!/!!%!!1!!!!\``````````Q!!!"-!!!!.!!!!!!!(``]!!!!"````_Q!!!!!!!!!"#5.I97ZO:7QA-Q!V!0%!!!!!!!!!!1Z398=A6G&amp;M&gt;76T,G.U&lt;!!?1&amp;!!"!!!!!%!!A!$#F*B&gt;S"797RV:8-!!!%!"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</Property>
 	</Item>
 	<Item Name="Output Values" Type="Variable">
 		<Property Name="featurePacks" Type="Str">Network</Property>
@@ -56,6 +56,14 @@
 		<Property Name="type" Type="Str">Network</Property>
 		<Property Name="typedefName1" Type="Str">Raw Values.ctl</Property>
 		<Property Name="typedefPath1" Type="PathRel">../../controls/Raw Values.ctl</Property>
-		<Property Name="typeDesc" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!'"@1%!!"-!A!!!!!!&amp;!%:!8Q.2!"1!!!!(!!%!!1!!!!@``````````Q!!!"-!!!!'!!!!!!!(``]!!!!"````^!!!!!!!!!!"#5.I97ZO:7QA-!"'1&amp;]$51!5!!!!"Q!"!!%!!!!(``````````]!!!!4!!!!"A!!!!!!"```!!!!!@````1!!!!!!!!!!1F$;'&amp;O&lt;G6M)$%!2E"@!V%!&amp;!!!!!=!!1!"!!!!"```````````!!!!%Q!!!!9!!!!!!!@``Q!!!!(````U!!!!!!!!!!%*1WBB&lt;GZF&lt;#!S!%:!8Q.2!"1!!!!/!!%!&amp;!!!!!\```````A!!!!"!"1!!!!/!!!!!!!(``]!!!!"````_Q!!!!!!!!!"#5.I97ZO:7QA-Q!V!0%!!!!!!!!!!1Z398=A6G&amp;M&gt;76T,G.U&lt;!!?1&amp;!!"!!!!!%!!A!$#F*B&gt;S"797RV:8-!!!%!"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</Property>
+		<Property Name="typeDesc" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!'"@1%!!"-!A!!!!!!&amp;!%:!8Q.2!"1!!!!(!!%!!1!!!!@``````````Q!!!"-!!!!'!!!!!!!(``]!!!!"````^!!!!!!!!!!"#5.I97ZO:7QA-!"'1&amp;]$51!5!!!!"Q!"!!%!!!!(``````````]!!!!4!!!!"A!!!!!!"```!!!!!@````1!!!!!!!!!!1F$;'&amp;O&lt;G6M)$%!2E"@!V%!&amp;!!!!!=!!1!"!!!!"```````````!!!!%Q!!!!9!!!!!!!@``Q!!!!(````U!!!!!!!!!!%*1WBB&lt;GZF&lt;#!S!%:!8Q.2!"1!!!!/!!%!!1!!!!\``````````Q!!!"-!!!!.!!!!!!!(``]!!!!"````_Q!!!!!!!!!"#5.I97ZO:7QA-Q!V!0%!!!!!!!!!!1Z398=A6G&amp;M&gt;76T,G.U&lt;!!?1&amp;!!"!!!!!%!!A!$#F*B&gt;S"797RV:8-!!!%!"!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!</Property>
+	</Item>
+	<Item Name="Stage position" Type="Variable">
+		<Property Name="featurePacks" Type="Str">Network</Property>
+		<Property Name="Network:UseBinding" Type="Str">False</Property>
+		<Property Name="Network:UseBuffering" Type="Str">False</Property>
+		<Property Name="numTypedefs" Type="UInt">0</Property>
+		<Property Name="type" Type="Str">Network</Property>
+		<Property Name="typeDesc" Type="Bin">%Q#!!!!!!!)!"1!&amp;!!!-!%!!!@````]!!!!"!!%!!!!J*1!!!"-!A!!!!!!"!!V!#A!'2'^V9GRF!!!"!!!!!!!!!!!!!!!!!!!!!!!!</Property>
 	</Item>
 </Library>
