@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.202"
+    ComputedModelVersion    "1.204"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,7 +30,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [1680.0, 106.0, 1920.0, 1073.0]
+      Location		      [0.0, 0.0, 1680.0, 1010.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -54,9 +54,9 @@ Model {
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
 	LoadSaveID		"634"
-	Extents			[1870.0, 929.0]
-	ZoomFactor		[1.0]
-	Offset			[23.5, -10.441666708389789]
+	Extents			[1630.0, 866.0]
+	ZoomFactor		[0.8]
+	Offset			[-79.875000000000455, -258.44166670839013]
       }
     }
   }
@@ -66,9 +66,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "oberstare"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Aug 01 12:20:58 2014"
-  RTWModifiedTimeStamp	  328793885
-  ModelVersionFormat	  "1.%<AutoIncrement:202>"
+  LastModifiedDate	  "Thu Aug 14 16:48:55 2014"
+  RTWModifiedTimeStamp	  329935721
+  ModelVersionFormat	  "1.%<AutoIncrement:204>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1055,7 +1055,7 @@ Model {
   }
   System {
     Name		    "CalebsModel_v5"
-    Location		    [1680, 106, 3600, 1179]
+    Location		    [0, 0, 1680, 1010]
     Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1067,7 +1067,7 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "150"
+    ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "868"
     Block {
@@ -1269,7 +1269,7 @@ Model {
 	  ZOrder		  155
 	  Floating		  off
 	  Location		  [6, 447, 1017, 1044]
-	  Open			  on
+	  Open			  off
 	  NumInputPorts		  "1"
 	  ZoomMode		  "yonly"
 	  List {
@@ -1803,7 +1803,7 @@ Model {
       ZOrder		      -4
       Floating		      off
       Location		      [6, 447, 1017, 1044]
-      Open		      on
+      Open		      off
       NumInputPorts	      "1"
       ZoomMode		      "yonly"
       List {
@@ -1858,7 +1858,7 @@ Model {
       }
       System {
 	Name			"Digital Controller"
-	Location		[1680, 106, 3600, 1179]
+	Location		[0, 0, 1680, 1010]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1870,7 +1870,7 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"100"
+	ZoomFactor		"80"
 	Block {
 	  BlockType		  Inport
 	  Name			  "vel_act_hat"
@@ -1878,6 +1878,7 @@ Model {
 	  Position		  [1830, 603, 1860, 617]
 	  ZOrder		  -1
 	  BlockMirror		  on
+	  ForegroundColor	  "red"
 	  IconDisplay		  "Port number"
 	}
 	Block {
@@ -1887,6 +1888,7 @@ Model {
 	  Position		  [515, 128, 545, 142]
 	  ZOrder		  -2
 	  BlockMirror		  on
+	  ForegroundColor	  "red"
 	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
@@ -1897,6 +1899,7 @@ Model {
 	  Position		  [290, 243, 320, 257]
 	  ZOrder		  -3
 	  BlockMirror		  on
+	  ForegroundColor	  "red"
 	  Port			  "3"
 	  IconDisplay		  "Port number"
 	}
@@ -1922,7 +1925,7 @@ Model {
 	  }
 	  System {
 	    Name		    "Command State Filter\nSmoothes Trajectory\nKeeps initial impact force down"
-	    Location		    [1680, 106, 3600, 1179]
+	    Location		    [0, 0, 1680, 1010]
 	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
@@ -2471,7 +2474,7 @@ Model {
 	  ZOrder		  -12
 	  Floating		  off
 	  Location		  [6, 447, 1017, 1044]
-	  Open			  on
+	  Open			  off
 	  NumInputPorts		  "1"
 	  List {
 	    ListType		    AxesTitles
@@ -3035,6 +3038,7 @@ Model {
 	  SID			  "709"
 	  Position		  [1835, 448, 1865, 462]
 	  ZOrder		  134
+	  BackgroundColor	  "red"
 	  IconDisplay		  "Port number"
 	}
 	Block {
@@ -3043,6 +3047,7 @@ Model {
 	  SID			  "769"
 	  Position		  [1830, 518, 1860, 532]
 	  ZOrder		  134
+	  BackgroundColor	  "red"
 	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
@@ -3053,6 +3058,7 @@ Model {
 	  Position		  [350, 513, 380, 527]
 	  ZOrder		  134
 	  BlockMirror		  on
+	  BackgroundColor	  "red"
 	  Port			  "3"
 	  IconDisplay		  "Port number"
 	}
@@ -3062,6 +3068,7 @@ Model {
 	  SID			  "828"
 	  Position		  [450, 723, 480, 737]
 	  ZOrder		  134
+	  BackgroundColor	  "red"
 	  Port			  "4"
 	  IconDisplay		  "Port number"
 	}
@@ -3535,7 +3542,7 @@ Model {
       ZOrder		      -4
       Floating		      off
       Location		      [6, 447, 1017, 1044]
-      Open		      on
+      Open		      off
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
       List {
@@ -3585,7 +3592,7 @@ Model {
       }
       System {
 	Name			"Motion Observer"
-	Location		[1680, 106, 3600, 1179]
+	Location		[0, 0, 1680, 1010]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -4014,7 +4021,7 @@ Model {
       ZOrder		      -4
       Floating		      off
       Location		      [6, 447, 1017, 1044]
-      Open		      on
+      Open		      off
       NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
@@ -4047,8 +4054,8 @@ Model {
       Position		      [945, 533, 975, 577]
       ZOrder		      -4
       Floating		      off
-      Location		      [1728, 216, 2208, 643]
-      Open		      on
+      Location		      [601, 315, 1081, 742]
+      Open		      off
       NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
