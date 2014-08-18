@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.204"
+    ComputedModelVersion    "1.211"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -30,7 +30,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [0.0, 0.0, 1680.0, 1010.0]
+      Location		      [1672.0, -158.0, 1936.0, 1176.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -53,10 +53,10 @@ Model {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"634"
-	Extents			[1630.0, 866.0]
-	ZoomFactor		[0.8]
-	Offset			[-79.875000000000455, -258.44166670839013]
+	LoadSaveID		"793"
+	Extents			[1886.0, 1032.0]
+	ZoomFactor		[1.5]
+	Offset			[-44.69999959766858, -33.43333159685136]
       }
     }
   }
@@ -66,9 +66,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "oberstare"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Aug 14 16:48:55 2014"
-  RTWModifiedTimeStamp	  329935721
-  ModelVersionFormat	  "1.%<AutoIncrement:204>"
+  LastModifiedDate	  "Mon Aug 18 17:32:35 2014"
+  RTWModifiedTimeStamp	  330283898
+  ModelVersionFormat	  "1.%<AutoIncrement:211>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -816,28 +816,21 @@ Model {
       SampleTime	      "-1"
     }
     Block {
-      BlockType		      DiscreteIntegrator
-      IntegratorMethod	      "Integration: Forward Euler"
-      gainval		      "1.0"
-      ExternalReset	      "none"
-      InitialConditionSource  "internal"
-      InitialCondition	      "0"
-      InitialConditionSetting "Output"
-      SampleTime	      "1"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      LockScale		      off
-      RndMeth		      "Floor"
-      SaturateOnIntegerOverflow	off
-      LimitOutput	      off
-      UpperSaturationLimit    "inf"
-      LowerSaturationLimit    "-inf"
-      ShowSaturationPort      off
-      ShowStatePort	      off
-      IgnoreLimit	      off
+      BlockType		      Delay
+      DelayLengthSource	      "Dialog"
+      DelayLength	      "2"
+      DelayLengthUpperLimit   "100"
+      InitialConditionSource  "Dialog"
+      InitialCondition	      "0.0"
+      ExternalReset	      "None"
+      PreventDirectFeedthrough off
+      DiagnosticForOutOfRangeDelayLength "None"
+      RemoveProtectionDelayLength off
+      InputProcessing	      "Elements as channels (sample based)"
+      UseCircularBuffer	      off
+      SampleTime	      "-1"
       StateMustResolveToSignalObject off
-      RTWStateStorageClass    "Auto"
+      CodeGenStateStorageClass "Auto"
     }
     Block {
       BlockType		      Gain
@@ -1055,7 +1048,7 @@ Model {
   }
   System {
     Name		    "CalebsModel_v5"
-    Location		    [0, 0, 1680, 1010]
+    Location		    [1672, -158, 3608, 1018]
     Open		    off
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -1069,7 +1062,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "868"
+    SIDHighWatermark	    "908"
     Block {
       BlockType		      SubSystem
       Name		      "Actuator Physical Model"
@@ -1858,8 +1851,8 @@ Model {
       }
       System {
 	Name			"Digital Controller"
-	Location		[0, 0, 1680, 1010]
-	Open			on
+	Location		[1672, -158, 3608, 1018]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1875,7 +1868,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "vel_act_hat"
 	  SID			  "771"
-	  Position		  [1830, 603, 1860, 617]
+	  Position		  [2000, 628, 2030, 642]
 	  ZOrder		  -1
 	  BlockMirror		  on
 	  ForegroundColor	  "red"
@@ -1885,7 +1878,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "X_act_hat"
 	  SID			  "853"
-	  Position		  [515, 128, 545, 142]
+	  Position		  [630, 78, 660, 92]
 	  ZOrder		  -2
 	  BlockMirror		  on
 	  ForegroundColor	  "red"
@@ -1896,7 +1889,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "Measured\nContact \nForce"
 	  SID			  "838"
-	  Position		  [290, 243, 320, 257]
+	  Position		  [405, 263, 435, 277]
 	  ZOrder		  -3
 	  BlockMirror		  on
 	  ForegroundColor	  "red"
@@ -1907,8 +1900,8 @@ Model {
 	  BlockType		  SubSystem
 	  Name			  "Command State Filter\nSmoothes Trajectory\nKeeps initial impact force down"
 	  SID			  "793"
-	  Ports			  [1, 3]
-	  Position		  [245, 552, 380, 618]
+	  Ports			  [1, 5]
+	  Position		  [360, 581, 495, 649]
 	  ZOrder		  172
 	  RequestExecContextInheritance	off
 	  Port {
@@ -1925,8 +1918,8 @@ Model {
 	  }
 	  System {
 	    Name		    "Command State Filter\nSmoothes Trajectory\nKeeps initial impact force down"
-	    Location		    [0, 0, 1680, 1010]
-	    Open		    off
+	    Location		    [1672, -158, 3608, 1018]
+	    Open		    on
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -1937,12 +1930,12 @@ Model {
 	    TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
 	    TiledPageScale	    1
 	    ShowPageBoundaries	    off
-	    ZoomFactor		    "200"
+	    ZoomFactor		    "150"
 	    Block {
 	      BlockType		      Inport
 	      Name		      "X_act*_uf"
 	      SID		      "794"
-	      Position		      [25, 193, 55, 207]
+	      Position		      [25, 343, 55, 357]
 	      ZOrder		      -1
 	      IconDisplay	      "Port number"
 	      Port {
@@ -1956,7 +1949,7 @@ Model {
 	      BlockType		      Abs
 	      Name		      "Abs"
 	      SID		      "795"
-	      Position		      [440, 50, 470, 80]
+	      Position		      [570, 175, 600, 205]
 	      ZOrder		      -3
 	      ShowName		      off
 	      SaturateOnIntegerOverflow	off
@@ -1966,7 +1959,7 @@ Model {
 	      Name		      "Accel Command"
 	      SID		      "835"
 	      Ports		      [1]
-	      Position		      [770, 58, 800, 92]
+	      Position		      [1000, 183, 1030, 217]
 	      ZOrder		      -12
 	      Floating		      off
 	      Location		      [6, 406, 665, 767]
@@ -1998,47 +1991,59 @@ Model {
 	      BlockType		      Constant
 	      Name		      "Constant"
 	      SID		      "796"
-	      Position		      [440, 90, 470, 120]
+	      Position		      [570, 215, 600, 245]
 	      ZOrder		      -4
 	      ShowName		      off
 	      Value		      "v_lim"
 	    }
 	    Block {
-	      BlockType		      DiscreteIntegrator
-	      Name		      "Discrete-Time\nIntegrator"
-	      SID		      "797"
+	      BlockType		      Delay
+	      Name		      "Delay1"
+	      SID		      "899"
 	      Ports		      [1, 1]
-	      Position		      [370, 184, 405, 216]
-	      ZOrder		      -5
-	      ShowName		      off
-	      SampleTime	      "-1"
-	      ICPrevOutput	      "DiscIntNeverNeededParam"
-	      ICPrevScaledInput	      "DiscIntNeverNeededParam"
+	      Position		      [500, 378, 535, 412]
+	      ZOrder		      12
+	      BlockMirror	      on
+	      InputPortMap	      "u0"
+	      DelayLength	      "1"
 	    }
 	    Block {
-	      BlockType		      DiscreteIntegrator
-	      Name		      "Discrete-Time\nIntegrator1"
-	      SID		      "798"
+	      BlockType		      Delay
+	      Name		      "Delay2"
+	      SID		      "900"
 	      Ports		      [1, 1]
-	      Position		      [545, 184, 580, 216]
-	      ZOrder		      -6
-	      ShowName		      off
-	      SampleTime	      "-1"
-	      ICPrevOutput	      "DiscIntNeverNeededParam"
-	      ICPrevScaledInput	      "DiscIntNeverNeededParam"
-	      Port {
-		PortNumber		1
-		Name			"X_act*"
-		RTWStorageClass		"Auto"
-		DataLoggingNameMode	"SignalName"
-	      }
+	      Position		      [355, 333, 390, 367]
+	      ZOrder		      15
+	      InputPortMap	      "u0"
+	      DelayLength	      "1"
+	    }
+	    Block {
+	      BlockType		      Delay
+	      Name		      "Delay3"
+	      SID		      "903"
+	      Ports		      [1, 1]
+	      Position		      [800, 378, 835, 412]
+	      ZOrder		      16
+	      BlockMirror	      on
+	      InputPortMap	      "u0"
+	      DelayLength	      "1"
+	    }
+	    Block {
+	      BlockType		      Delay
+	      Name		      "Delay4"
+	      SID		      "904"
+	      Ports		      [1, 1]
+	      Position		      [655, 333, 690, 367]
+	      ZOrder		      19
+	      InputPortMap	      "u0"
+	      DelayLength	      "1"
 	    }
 	    Block {
 	      BlockType		      Mux
 	      Name		      "Mux"
 	      SID		      "799"
 	      Ports		      [2, 1]
-	      Position		      [655, 291, 660, 329]
+	      Position		      [910, 441, 915, 479]
 	      ZOrder		      -7
 	      ShowName		      off
 	      Inputs		      "2"
@@ -2049,7 +2054,7 @@ Model {
 	      Name		      "Product"
 	      SID		      "800"
 	      Ports		      [2, 1]
-	      Position		      [600, 17, 630, 48]
+	      Position		      [730, 142, 760, 173]
 	      ZOrder		      -8
 	      InputSameDT	      off
 	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -2066,7 +2071,7 @@ Model {
 	      Name		      "Relational\nOperator"
 	      SID		      "801"
 	      Ports		      [2, 1]
-	      Position		      [530, 57, 560, 88]
+	      Position		      [660, 182, 690, 213]
 	      ZOrder		      -9
 	      ShowName		      off
 	      Operator		      "<="
@@ -2078,7 +2083,7 @@ Model {
 	      Name		      "Saturation"
 	      SID		      "802"
 	      Ports		      [1, 1]
-	      Position		      [455, 185, 485, 215]
+	      Position		      [585, 335, 615, 365]
 	      ZOrder		      -10
 	      ShowName		      off
 	      InputPortMap	      "u0"
@@ -2096,7 +2101,7 @@ Model {
 	      Name		      "Saturation1"
 	      SID		      "803"
 	      Ports		      [1, 1]
-	      Position		      [300, 185, 330, 215]
+	      Position		      [300, 335, 330, 365]
 	      ZOrder		      -11
 	      ShowName		      off
 	      InputPortMap	      "u0"
@@ -2108,7 +2113,7 @@ Model {
 	      Name		      "State_Filter"
 	      SID		      "804"
 	      Ports		      [1]
-	      Position		      [680, 293, 710, 327]
+	      Position		      [1000, 443, 1030, 477]
 	      ZOrder		      -12
 	      Floating		      off
 	      Location		      [1, 346, 569, 767]
@@ -2131,7 +2136,7 @@ Model {
 	      Name		      "Sum"
 	      SID		      "805"
 	      Ports		      [2, 1]
-	      Position		      [100, 190, 120, 210]
+	      Position		      [100, 340, 120, 360]
 	      ZOrder		      -13
 	      ShowName		      off
 	      IconShape		      "round"
@@ -2145,7 +2150,7 @@ Model {
 	      Name		      "Sum1"
 	      SID		      "806"
 	      Ports		      [2, 1]
-	      Position		      [205, 190, 225, 210]
+	      Position		      [205, 340, 225, 360]
 	      ZOrder		      -14
 	      ShowName		      off
 	      IconShape		      "round"
@@ -2155,11 +2160,73 @@ Model {
 	      SaturateOnIntegerOverflow	off
 	    }
 	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum2"
+	      SID		      "905"
+	      Ports		      [2, 1]
+	      Position		      [780, 340, 800, 360]
+	      ZOrder		      18
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|++"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	      Port {
+		PortNumber		1
+		Name			"X_act*"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Sum
+	      Name		      "Sum6"
+	      SID		      "901"
+	      Ports		      [2, 1]
+	      Position		      [480, 340, 500, 360]
+	      ZOrder		      14
+	      ShowName		      off
+	      IconShape		      "round"
+	      Inputs		      "|++"
+	      InputSameDT	      off
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	      Port {
+		PortNumber		1
+		Name			"UnSaturated\nVelocity\nCommand"
+		RTWStorageClass		"Auto"
+		DataLoggingNameMode	"SignalName"
+	      }
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Ts "
+	      SID		      "902"
+	      Position		      [405, 331, 455, 369]
+	      ZOrder		      13
+	      Gain		      "Ts"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
+	      BlockType		      Gain
+	      Name		      "Ts 1"
+	      SID		      "906"
+	      Position		      [710, 331, 760, 369]
+	      ZOrder		      17
+	      Gain		      "Ts"
+	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+	      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+	      SaturateOnIntegerOverflow	off
+	    }
+	    Block {
 	      BlockType		      Scope
 	      Name		      "Vel Command"
 	      SID		      "820"
 	      Ports		      [1]
-	      Position		      [770, 123, 800, 157]
+	      Position		      [1000, 273, 1030, 307]
 	      ZOrder		      -12
 	      Floating		      off
 	      Location		      [1, 325, 569, 767]
@@ -2181,7 +2248,7 @@ Model {
 	      BlockType		      Gain
 	      Name		      "k_1"
 	      SID		      "808"
-	      Position		      [145, 185, 185, 215]
+	      Position		      [145, 335, 185, 365]
 	      ZOrder		      -16
 	      Gain		      "k_1"
 	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -2192,7 +2259,7 @@ Model {
 	      BlockType		      Gain
 	      Name		      "k_2"
 	      SID		      "809"
-	      Position		      [240, 185, 280, 215]
+	      Position		      [240, 335, 280, 365]
 	      ZOrder		      -17
 	      Gain		      "k_2"
 	      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -2203,7 +2270,7 @@ Model {
 	      BlockType		      Outport
 	      Name		      "X_act*"
 	      SID		      "810"
-	      Position		      [680, 193, 710, 207]
+	      Position		      [1095, 343, 1125, 357]
 	      ZOrder		      1
 	      IconDisplay	      "Port number"
 	    }
@@ -2211,7 +2278,7 @@ Model {
 	      BlockType		      Outport
 	      Name		      "Vel_act*"
 	      SID		      "811"
-	      Position		      [680, 108, 710, 122]
+	      Position		      [1095, 258, 1125, 272]
 	      ZOrder		      -19
 	      Port		      "2"
 	      IconDisplay	      "Port number"
@@ -2220,9 +2287,27 @@ Model {
 	      BlockType		      Outport
 	      Name		      "Accel_act*"
 	      SID		      "812"
-	      Position		      [680, 28, 710, 42]
+	      Position		      [1095, 153, 1125, 167]
 	      ZOrder		      -18
 	      Port		      "3"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "UnSaturated\nVelocity\nCommand"
+	      SID		      "907"
+	      Position		      [1095, 93, 1125, 107]
+	      ZOrder		      20
+	      Port		      "4"
+	      IconDisplay	      "Port number"
+	    }
+	    Block {
+	      BlockType		      Outport
+	      Name		      "Saturated\nAcceleration\nCommand"
+	      SID		      "908"
+	      Position		      [1095, 18, 1125, 32]
+	      ZOrder		      21
+	      Port		      "5"
 	      IconDisplay	      "Port number"
 	    }
 	    Line {
@@ -2247,40 +2332,54 @@ Model {
 	      DstPort		      1
 	    }
 	    Line {
-	      ZOrder		      4
-	      SrcBlock		      "k_2"
+	      Name		      "UnSaturated\nVelocity\nCommand"
+	      ZOrder		      39
+	      SrcBlock		      "Sum6"
 	      SrcPort		      1
-	      DstBlock		      "Saturation1"
-	      DstPort		      1
-	    }
-	    Line {
-	      ZOrder		      5
-	      SrcBlock		      "Discrete-Time\nIntegrator"
-	      SrcPort		      1
-	      Points		      [15, 0]
+	      Points		      [51, 0]
 	      Branch {
-		ZOrder			6
-		Points			[0, 50; -210, 0]
-		DstBlock		"Sum1"
-		DstPort			2
-	      }
-	      Branch {
-		ZOrder			7
+		ZOrder			40
 		DstBlock		"Saturation"
 		DstPort			1
 	      }
 	      Branch {
+		ZOrder			6
+		Points			[0, 45]
+		Branch {
+		  ZOrder		  42
+		  DstBlock		  "Delay1"
+		  DstPort		  1
+		}
+		Branch {
+		  ZOrder		  41
+		  Points		  [0, 37; -341, 0]
+		  DstBlock		  "Sum1"
+		  DstPort		  2
+		}
+	      }
+	      Branch {
 		ZOrder			8
-		DstBlock		"Abs"
-		DstPort			1
+		Labels			[1, 1]
+		Points			[0, -160]
+		Branch {
+		  ZOrder		  66
+		  Points		  [0, -90]
+		  DstBlock		  "UnSaturated\nVelocity\nCommand"
+		  DstPort		  1
+		}
+		Branch {
+		  ZOrder		  65
+		  DstBlock		  "Abs"
+		  DstPort		  1
+		}
 	      }
 	    }
 	    Line {
 	      Name		      "X_act*"
-	      ZOrder		      9
-	      SrcBlock		      "Discrete-Time\nIntegrator1"
+	      ZOrder		      55
+	      SrcBlock		      "Sum2"
 	      SrcPort		      1
-	      Points		      [10, 0]
+	      Points		      [60, 0]
 	      Branch {
 		ZOrder			10
 		DstBlock		"X_act*"
@@ -2288,17 +2387,26 @@ Model {
 	      }
 	      Branch {
 		ZOrder			11
-		Points			[0, 100]
+		Points			[0, 45]
 		Branch {
-		  ZOrder		  12
-		  Labels		  [1, 1]
-		  Points		  [-485, 0]
-		  DstBlock		  "Sum"
-		  DstPort		  2
+		  ZOrder		  64
+		  Points		  [0, 55]
+		  Branch {
+		    ZOrder		    47
+		    Labels		    [1, 1]
+		    Points		    [-755, 0]
+		    DstBlock		    "Sum"
+		    DstPort		    2
+		  }
+		  Branch {
+		    ZOrder		    13
+		    DstBlock		    "Mux"
+		    DstPort		    1
+		  }
 		}
 		Branch {
-		  ZOrder		  13
-		  DstBlock		  "Mux"
+		  ZOrder		  58
+		  DstBlock		  "Delay3"
 		  DstPort		  1
 		}
 	      }
@@ -2323,7 +2431,7 @@ Model {
 	      ZOrder		      16
 	      SrcBlock		      "Product"
 	      SrcPort		      1
-	      Points		      [20, 0]
+	      Points		      [120, 0; 0, 0]
 	      Branch {
 		ZOrder			17
 		DstBlock		"Accel_act*"
@@ -2344,13 +2452,13 @@ Model {
 	      SrcPort		      1
 	      Points		      [15, 0]
 	      Branch {
-		ZOrder			20
-		DstBlock		"Discrete-Time\nIntegrator1"
+		ZOrder			94
+		DstBlock		"Delay4"
 		DstPort			1
 	      }
 	      Branch {
-		ZOrder			21
-		Points			[0, -85; 145, 0]
+		ZOrder			93
+		Points			[0, -85; 245, 0]
 		Branch {
 		  ZOrder		  22
 		  DstBlock		  "Vel_act*"
@@ -2366,20 +2474,29 @@ Model {
 	      }
 	    }
 	    Line {
-	      ZOrder		      24
+	      ZOrder		      84
 	      SrcBlock		      "Saturation1"
 	      SrcPort		      1
-	      Points		      [15, 0]
+	      Points		      [5, 0]
 	      Branch {
-		ZOrder			25
-		DstBlock		"Discrete-Time\nIntegrator"
+		ZOrder			86
+		DstBlock		"Delay2"
 		DstPort			1
 	      }
 	      Branch {
-		ZOrder			26
-		Points			[0, -175]
-		DstBlock		"Product"
-		DstPort			1
+		ZOrder			85
+		Points			[0, -200]
+		Branch {
+		  ZOrder		  98
+		  DstBlock		  "Product"
+		  DstPort		  1
+		}
+		Branch {
+		  ZOrder		  97
+		  Points		  [0, -125]
+		  DstBlock		  "Saturated\nAcceleration\nCommand"
+		  DstPort		  1
+		}
 	      }
 	    }
 	    Line {
@@ -2416,6 +2533,57 @@ Model {
 	      DstBlock		      "Product"
 	      DstPort		      2
 	    }
+	    Line {
+	      ZOrder		      32
+	      SrcBlock		      "Delay1"
+	      SrcPort		      1
+	      Points		      [-5, 0]
+	      DstBlock		      "Sum6"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      70
+	      SrcBlock		      "Ts "
+	      SrcPort		      1
+	      DstBlock		      "Sum6"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      49
+	      SrcBlock		      "Delay3"
+	      SrcPort		      1
+	      Points		      [-5, 0]
+	      DstBlock		      "Sum2"
+	      DstPort		      2
+	    }
+	    Line {
+	      ZOrder		      91
+	      SrcBlock		      "Ts 1"
+	      SrcPort		      1
+	      DstBlock		      "Sum2"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      71
+	      SrcBlock		      "Delay2"
+	      SrcPort		      1
+	      DstBlock		      "Ts "
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      88
+	      SrcBlock		      "k_2"
+	      SrcPort		      1
+	      DstBlock		      "Saturation1"
+	      DstPort		      1
+	    }
+	    Line {
+	      ZOrder		      92
+	      SrcBlock		      "Delay4"
+	      SrcPort		      1
+	      DstBlock		      "Ts 1"
+	      DstPort		      1
+	    }
 	  }
 	}
 	Block {
@@ -2423,7 +2591,7 @@ Model {
 	  Name			  "Current vs. Force\nOffset Correction1"
 	  SID			  "776"
 	  Ports			  [1, 1]
-	  Position		  [1340, 440, 1370, 470]
+	  Position		  [1510, 465, 1540, 495]
 	  ZOrder		  219
 	  LibraryVersion	  "1.287"
 	  SourceBlock		  "simulink/Discontinuities/Coulomb &\nViscous Friction"
@@ -2433,11 +2601,44 @@ Model {
 	  gain			  "K_L12_Force"
 	}
 	Block {
+	  BlockType		  Delay
+	  Name			  "Delay"
+	  SID			  "890"
+	  Ports			  [1, 1]
+	  Position		  [335, 168, 370, 202]
+	  ZOrder		  258
+	  BlockMirror		  on
+	  InputPortMap		  "u0"
+	  DelayLength		  "1"
+	}
+	Block {
+	  BlockType		  Delay
+	  Name			  "Delay1"
+	  SID			  "893"
+	  Ports			  [1, 1]
+	  Position		  [895, 438, 930, 472]
+	  ZOrder		  261
+	  BlockMirror		  on
+	  InputPortMap		  "u0"
+	  DelayLength		  "1"
+	}
+	Block {
+	  BlockType		  Delay
+	  Name			  "Delay2"
+	  SID			  "896"
+	  Ports			  [1, 1]
+	  Position		  [790, 538, 825, 572]
+	  ZOrder		  264
+	  BlockMirror		  on
+	  InputPortMap		  "u0"
+	  DelayLength		  "1"
+	}
+	Block {
 	  BlockType		  Scope
 	  Name			  "F_cmd"
 	  SID			  "854"
 	  Ports			  [1]
-	  Position		  [1215, 73, 1245, 107]
+	  Position		  [1385, 23, 1415, 57]
 	  ZOrder		  -12
 	  Floating		  off
 	  Location		  [1, 618, 1012, 1199]
@@ -2470,7 +2671,7 @@ Model {
 	  Name			  "F_cmd or F_act*\nDepending on mode"
 	  SID			  "858"
 	  Ports			  [1]
-	  Position		  [1340, 358, 1370, 392]
+	  Position		  [1510, 383, 1540, 417]
 	  ZOrder		  -12
 	  Floating		  off
 	  Location		  [6, 447, 1017, 1044]
@@ -2502,7 +2703,7 @@ Model {
 	  Name			  "Force \nCommand \nRamp"
 	  SID			  "855"
 	  Ports			  [0, 1]
-	  Position		  [35, 155, 65, 185]
+	  Position		  [35, 105, 65, 135]
 	  ZOrder		  -32
 	  LibraryVersion	  "1.287"
 	  SourceBlock		  "simulink/Sources/Ramp"
@@ -2517,7 +2718,7 @@ Model {
 	  BlockType		  Step
 	  Name			  "Force Control"
 	  SID			  "849"
-	  Position		  [1100, 440, 1130, 470]
+	  Position		  [1270, 465, 1300, 495]
 	  ZOrder		  -14
 	  Time			  "F_time"
 	  SampleTime		  "0"
@@ -2526,7 +2727,7 @@ Model {
 	  BlockType		  Gain
 	  Name			  "Gain1"
 	  SID			  "783"
-	  Position		  [805, 469, 855, 511]
+	  Position		  [975, 494, 1025, 536]
 	  ZOrder		  -15
 	  ShowName		  off
 	  Gain			  "ksa"
@@ -2538,7 +2739,7 @@ Model {
 	  BlockType		  Gain
 	  Name			  "Gain2"
 	  SID			  "784"
-	  Position		  [805, 394, 855, 436]
+	  Position		  [975, 394, 1025, 436]
 	  ZOrder		  -16
 	  ShowName		  off
 	  Gain			  "kisa"
@@ -2550,7 +2751,7 @@ Model {
 	  BlockType		  Gain
 	  Name			  "Gain3"
 	  SID			  "785"
-	  Position		  [805, 564, 855, 606]
+	  Position		  [975, 589, 1025, 631]
 	  ZOrder		  -17
 	  ShowName		  off
 	  Gain			  "ba"
@@ -2562,7 +2763,7 @@ Model {
 	  BlockType		  Gain
 	  Name			  "Gain4"
 	  SID			  "842"
-	  Position		  [505, 69, 555, 111]
+	  Position		  [620, 19, 670, 61]
 	  ZOrder		  -18
 	  ShowName		  off
 	  Gain			  "kvc"
@@ -2574,7 +2775,7 @@ Model {
 	  BlockType		  Gain
 	  Name			  "Gain5"
 	  SID			  "843"
-	  Position		  [255, 69, 305, 111]
+	  Position		  [370, 19, 420, 61]
 	  ZOrder		  -19
 	  ShowName		  off
 	  Gain			  "1/kvc"
@@ -2586,7 +2787,7 @@ Model {
 	  BlockType		  Gain
 	  Name			  "Gain6"
 	  SID			  "848"
-	  Position		  [290, 149, 340, 191]
+	  Position		  [405, 99, 455, 141]
 	  ZOrder		  -20
 	  ShowName		  off
 	  Gain			  "ymod"
@@ -2598,7 +2799,7 @@ Model {
 	  BlockType		  Gain
 	  Name			  "Gain7"
 	  SID			  "866"
-	  Position		  [805, 319, 870, 381]
+	  Position		  [975, 269, 1040, 331]
 	  ZOrder		  252
 	  ShowName		  off
 	  Gain			  "bp_hat"
@@ -2610,7 +2811,7 @@ Model {
 	  BlockType		  Gain
 	  Name			  "Gain8"
 	  SID			  "868"
-	  Position		  [805, 244, 870, 306]
+	  Position		  [975, 194, 1040, 256]
 	  ZOrder		  254
 	  ShowName		  off
 	  Gain			  "Mar_hat"
@@ -2619,61 +2820,10 @@ Model {
 	  SaturateOnIntegerOverflow off
 	}
 	Block {
-	  BlockType		  DiscreteIntegrator
-	  Name			  "K = Ts"
-	  SID			  "788"
-	  Ports			  [1, 1]
-	  Position		  [570, 474, 605, 506]
-	  ZOrder		  -21
-	  IntegratorMethod	  "Accumulation: Backward Euler"
-	  gainval		  "Ts"
-	  SampleTime		  "-1"
-	  ICPrevOutput		  "DiscIntNeverNeededParam"
-	  ICPrevScaledInput	  "DiscIntNeverNeededParam"
-	  Port {
-	    PortNumber		    1
-	    Name		    "Position Error"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  DiscreteIntegrator
-	  Name			  "K = Ts1"
-	  SID			  "789"
-	  Ports			  [1, 1]
-	  Position		  [630, 399, 665, 431]
-	  ZOrder		  -22
-	  IntegratorMethod	  "Accumulation: Backward Euler"
-	  gainval		  "Ts"
-	  SampleTime		  "-1"
-	  ICPrevOutput		  "DiscIntNeverNeededParam"
-	  ICPrevScaledInput	  "DiscIntNeverNeededParam"
-	  Port {
-	    PortNumber		    1
-	    Name		    "Integrated Position Error"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  DiscreteIntegrator
-	  Name			  "K = Ts2"
-	  SID			  "845"
-	  Ports			  [1, 1]
-	  Position		  [225, 154, 260, 186]
-	  ZOrder		  -23
-	  IntegratorMethod	  "Accumulation: Backward Euler"
-	  gainval		  "Ts"
-	  SampleTime		  "-1"
-	  ICPrevOutput		  "DiscIntNeverNeededParam"
-	  ICPrevScaledInput	  "DiscIntNeverNeededParam"
-	}
-	Block {
 	  BlockType		  Gain
 	  Name			  "K_PWM"
 	  SID			  "685"
-	  Position		  [1565, 430, 1650, 480]
+	  Position		  [1735, 455, 1820, 505]
 	  ZOrder		  126
 	  Gain			  "K_PWM"
 	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
@@ -2690,7 +2840,7 @@ Model {
 	  BlockType		  Gain
 	  Name			  "K_backemf"
 	  SID			  "772"
-	  Position		  [1565, 581, 1695, 639]
+	  Position		  [1735, 606, 1865, 664]
 	  ZOrder		  140
 	  BlockMirror		  on
 	  Gain			  "K_backemf"
@@ -2703,7 +2853,7 @@ Model {
 	  Name			  "Logical\nOperator"
 	  SID			  "851"
 	  Ports			  [1, 1]
-	  Position		  [1265, 522, 1295, 538]
+	  Position		  [1435, 547, 1465, 563]
 	  ZOrder		  -26
 	  Operator		  "NOT"
 	  AllPortsSameDT	  off
@@ -2714,7 +2864,7 @@ Model {
 	  Name			  "Logical\nOperator1"
 	  SID			  "859"
 	  Ports			  [1, 1]
-	  Position		  [1265, 602, 1295, 618]
+	  Position		  [1435, 627, 1465, 643]
 	  ZOrder		  -27
 	  Operator		  "NOT"
 	  AllPortsSameDT	  off
@@ -2725,7 +2875,7 @@ Model {
 	  Name			  "Position\nCommand\nRamp"
 	  SID			  "826"
 	  Ports			  [0, 1]
-	  Position		  [75, 570, 105, 600]
+	  Position		  [75, 595, 105, 625]
 	  ZOrder		  -31
 	  LibraryVersion	  "1.287"
 	  SourceBlock		  "simulink/Sources/Ramp"
@@ -2741,7 +2891,7 @@ Model {
 	  Name			  "Product"
 	  SID			  "852"
 	  Ports			  [2, 1]
-	  Position		  [1330, 507, 1360, 538]
+	  Position		  [1500, 532, 1530, 563]
 	  ZOrder		  -28
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
@@ -2752,7 +2902,7 @@ Model {
 	  Name			  "Product1"
 	  SID			  "860"
 	  Ports			  [2, 1]
-	  Position		  [1507, 545, 1538, 575]
+	  Position		  [1677, 570, 1708, 600]
 	  ZOrder		  -29
 	  BlockRotation		  270
 	  InputSameDT		  off
@@ -2763,7 +2913,7 @@ Model {
 	  BlockType		  Gain
 	  Name			  "Ra_L12"
 	  SID			  "691"
-	  Position		  [1400, 430, 1485, 480]
+	  Position		  [1570, 455, 1655, 505]
 	  ZOrder		  127
 	  Gain			  "Ra_L12"
 	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
@@ -2781,7 +2931,7 @@ Model {
 	  Name			  "Saturate\nForce\nCommand"
 	  SID			  "856"
 	  Ports			  [1, 1]
-	  Position		  [110, 155, 140, 185]
+	  Position		  [110, 105, 140, 135]
 	  ZOrder		  -14
 	  InputPortMap		  "u0"
 	  UpperLimit		  "F_act_cmd"
@@ -2793,7 +2943,7 @@ Model {
 	  Name			  "Saturate\nPosition\nCommand"
 	  SID			  "827"
 	  Ports			  [1, 1]
-	  Position		  [165, 570, 195, 600]
+	  Position		  [280, 595, 310, 625]
 	  ZOrder		  -14
 	  InputPortMap		  "u0"
 	  UpperLimit		  "ContactPoint+PositionCmdErr"
@@ -2805,7 +2955,7 @@ Model {
 	  Name			  "Saturate PWM\nCommand1"
 	  SID			  "822"
 	  Ports			  [1, 1]
-	  Position		  [1690, 440, 1720, 470]
+	  Position		  [1860, 465, 1890, 495]
 	  ZOrder		  -14
 	  InputPortMap		  "u0"
 	  UpperLimit		  "PWM_res"
@@ -2816,7 +2966,7 @@ Model {
 	  Name			  "Sum1"
 	  SID			  "696"
 	  Ports			  [2, 1]
-	  Position		  [1515, 445, 1535, 465]
+	  Position		  [1685, 470, 1705, 490]
 	  ZOrder		  250
 	  ShowName		  off
 	  IconShape		  "round"
@@ -2827,10 +2977,70 @@ Model {
 	}
 	Block {
 	  BlockType		  Sum
+	  Name			  "Sum10"
+	  SID			  "891"
+	  Ports			  [2, 1]
+	  Position		  [300, 110, 320, 130]
+	  ZOrder		  260
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Integrated \nForce \nError"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum11"
+	  SID			  "894"
+	  Ports			  [2, 1]
+	  Position		  [860, 405, 880, 425]
+	  ZOrder		  263
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Integrated Position Error"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum12"
+	  SID			  "897"
+	  Ports			  [2, 1]
+	  Position		  [755, 505, 775, 525]
+	  ZOrder		  266
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Position Error"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Sum
 	  Name			  "Sum2"
 	  SID			  "786"
 	  Ports			  [2, 1]
-	  Position		  [505, 575, 525, 595]
+	  Position		  [620, 600, 640, 620]
 	  ZOrder		  250
 	  ShowName		  off
 	  IconShape		  "round"
@@ -2850,7 +3060,7 @@ Model {
 	  Name			  "Sum3"
 	  SID			  "787"
 	  Ports			  [3, 1]
-	  Position		  [870, 480, 890, 500]
+	  Position		  [1040, 505, 1060, 525]
 	  ZOrder		  250
 	  ShowName		  off
 	  IconShape		  "round"
@@ -2870,7 +3080,7 @@ Model {
 	  Name			  "Sum4"
 	  SID			  "840"
 	  Ports			  [2, 1]
-	  Position		  [170, 160, 190, 180]
+	  Position		  [170, 110, 190, 130]
 	  ZOrder		  250
 	  ShowName		  off
 	  IconShape		  "round"
@@ -2884,7 +3094,7 @@ Model {
 	  Name			  "Sum5"
 	  SID			  "844"
 	  Ports			  [2, 1]
-	  Position		  [400, 80, 420, 100]
+	  Position		  [515, 30, 535, 50]
 	  ZOrder		  250
 	  ShowName		  off
 	  IconShape		  "round"
@@ -2898,7 +3108,7 @@ Model {
 	  Name			  "Sum6"
 	  SID			  "846"
 	  Ports			  [2, 1]
-	  Position		  [450, 80, 470, 100]
+	  Position		  [565, 30, 585, 50]
 	  ZOrder		  250
 	  ShowName		  off
 	  IconShape		  "round"
@@ -2912,7 +3122,7 @@ Model {
 	  Name			  "Sum7"
 	  SID			  "847"
 	  Ports			  [2, 1]
-	  Position		  [605, 80, 625, 100]
+	  Position		  [720, 30, 740, 50]
 	  ZOrder		  250
 	  ShowName		  off
 	  IconShape		  "round"
@@ -2932,7 +3142,7 @@ Model {
 	  Name			  "Sum8"
 	  SID			  "865"
 	  Ports			  [2, 1]
-	  Position		  [1020, 480, 1040, 500]
+	  Position		  [1190, 505, 1210, 525]
 	  ZOrder		  251
 	  ShowName		  off
 	  IconShape		  "round"
@@ -2946,7 +3156,7 @@ Model {
 	  Name			  "Sum9"
 	  SID			  "867"
 	  Ports			  [2, 1]
-	  Position		  [1020, 340, 1040, 360]
+	  Position		  [1190, 290, 1210, 310]
 	  ZOrder		  253
 	  BlockRotation		  270
 	  BlockMirror		  on
@@ -2968,17 +3178,50 @@ Model {
 	  BlockType		  Switch
 	  Name			  "Switch"
 	  SID			  "839"
-	  Position		  [1180, 402, 1240, 508]
+	  Position		  [1350, 427, 1410, 533]
 	  ZOrder		  -44
 	  Criteria		  "u2 > Threshold"
 	  InputSameDT		  off
 	  SaturateOnIntegerOverflow off
 	}
 	Block {
+	  BlockType		  Gain
+	  Name			  "Ts"
+	  SID			  "892"
+	  Position		  [235, 101, 285, 139]
+	  ZOrder		  259
+	  Gain			  "Ts"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Ts1"
+	  SID			  "895"
+	  Position		  [795, 396, 845, 434]
+	  ZOrder		  262
+	  Gain			  "Ts"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Ts2"
+	  SID			  "898"
+	  Position		  [690, 496, 740, 534]
+	  ZOrder		  265
+	  Gain			  "Ts"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
 	  BlockType		  ZeroOrderHold
 	  Name			  "Zero-Order\nHold"
 	  SID			  "774"
-	  Position		  [1765, 440, 1800, 470]
+	  Position		  [1935, 465, 1970, 495]
 	  ZOrder		  -45
 	  SampleTime		  "Ts"
 	}
@@ -2986,7 +3229,7 @@ Model {
 	  BlockType		  ZeroOrderHold
 	  Name			  "Zero-Order\nHold1"
 	  SID			  "775"
-	  Position		  [1765, 510, 1800, 540]
+	  Position		  [1935, 535, 1970, 565]
 	  ZOrder		  -46
 	  SampleTime		  "Ts"
 	}
@@ -2994,7 +3237,7 @@ Model {
 	  BlockType		  ZeroOrderHold
 	  Name			  "Zero-Order\nHold2"
 	  SID			  "850"
-	  Position		  [225, 235, 260, 265]
+	  Position		  [340, 255, 375, 285]
 	  ZOrder		  -47
 	  BlockMirror		  on
 	  SampleTime		  "Ts"
@@ -3004,7 +3247,7 @@ Model {
 	  Name			  "y*"
 	  SID			  "857"
 	  Ports			  [1]
-	  Position		  [475, 193, 505, 227]
+	  Position		  [590, 143, 620, 177]
 	  ZOrder		  -12
 	  Floating		  off
 	  Location		  [6, 406, 665, 767]
@@ -3036,7 +3279,7 @@ Model {
 	  BlockType		  Outport
 	  Name			  "PWM_Count"
 	  SID			  "709"
-	  Position		  [1835, 448, 1865, 462]
+	  Position		  [2005, 473, 2035, 487]
 	  ZOrder		  134
 	  BackgroundColor	  "red"
 	  IconDisplay		  "Port number"
@@ -3045,7 +3288,7 @@ Model {
 	  BlockType		  Outport
 	  Name			  "F_act*"
 	  SID			  "769"
-	  Position		  [1830, 518, 1860, 532]
+	  Position		  [2000, 543, 2030, 557]
 	  ZOrder		  134
 	  BackgroundColor	  "red"
 	  Port			  "2"
@@ -3055,7 +3298,7 @@ Model {
 	  BlockType		  Outport
 	  Name			  "X_act*"
 	  SID			  "813"
-	  Position		  [350, 513, 380, 527]
+	  Position		  [465, 538, 495, 552]
 	  ZOrder		  134
 	  BlockMirror		  on
 	  BackgroundColor	  "red"
@@ -3066,7 +3309,7 @@ Model {
 	  BlockType		  Outport
 	  Name			  "Vel_act*"
 	  SID			  "828"
-	  Position		  [450, 723, 480, 737]
+	  Position		  [565, 748, 595, 762]
 	  ZOrder		  134
 	  BackgroundColor	  "red"
 	  Port			  "4"
@@ -3109,7 +3352,7 @@ Model {
 	  }
 	  Branch {
 	    ZOrder		    6
-	    Points		    [0, 100; -1265, 0]
+	    Points		    [0, 100; -1320, 0]
 	    DstBlock		    "Sum2"
 	    DstPort		    2
 	  }
@@ -3140,16 +3383,17 @@ Model {
 	  ZOrder		  10
 	  SrcBlock		  "Sum2"
 	  SrcPort		  1
-	  Points		  [25, 0]
+	  Points		  [7, 0]
 	  Branch {
-	    ZOrder		    11
-	    Labels		    [1, 1]
-	    DstBlock		    "Gain3"
+	    ZOrder		    160
+	    Points		    [0, -95]
+	    DstBlock		    "Ts2"
 	    DstPort		    1
 	  }
 	  Branch {
-	    ZOrder		    12
-	    DstBlock		    "K = Ts"
+	    ZOrder		    159
+	    Labels		    [1, 1]
+	    DstBlock		    "Gain3"
 	    DstPort		    1
 	  }
 	}
@@ -3178,44 +3422,64 @@ Model {
 	}
 	Line {
 	  Name			  "Position Error"
-	  ZOrder		  16
-	  SrcBlock		  "K = Ts"
+	  ZOrder		  152
+	  SrcBlock		  "Sum12"
 	  SrcPort		  1
-	  Points		  [5, 0]
+	  Points		  [0, 0]
 	  Branch {
-	    ZOrder		    17
-	    Labels		    [1, 1]
-	    DstBlock		    "Gain1"
+	    ZOrder		    164
+	    DstBlock		    "Ts1"
 	    DstPort		    1
 	  }
 	  Branch {
-	    ZOrder		    18
-	    DstBlock		    "K = Ts1"
-	    DstPort		    1
+	    ZOrder		    156
+	    Points		    [104, 0]
+	    Branch {
+	      ZOrder		      158
+	      Points		      [0, 40]
+	      DstBlock		      "Delay2"
+	      DstPort		      1
+	    }
+	    Branch {
+	      ZOrder		      157
+	      Labels		      [-1, 0]
+	      DstBlock		      "Gain1"
+	      DstPort		      1
+	    }
 	  }
 	}
 	Line {
 	  Name			  "Integrated Position Error"
-	  ZOrder		  19
-	  Labels		  [1, 1]
-	  SrcBlock		  "K = Ts1"
+	  ZOrder		  137
+	  SrcBlock		  "Sum11"
 	  SrcPort		  1
-	  DstBlock		  "Gain2"
-	  DstPort		  1
+	  Points		  [74, 0]
+	  Branch {
+	    ZOrder		    139
+	    Points		    [0, 40]
+	    DstBlock		    "Delay1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    138
+	    Labels		    [-1, 0]
+	    DstBlock		    "Gain2"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  Name			  "Vel_act*"
 	  ZOrder		  20
 	  SrcBlock		  "Command State Filter\nSmoothes Trajectory\nKeeps initial impact force down"
 	  SrcPort		  2
-	  Points		  [35, 0]
+	  Points		  [0, 10; 35, 0]
 	  Branch {
 	    ZOrder		    21
 	    Labels		    [1, 1]
 	    Points		    [63, 0]
 	    Branch {
 	      ZOrder		      67
-	      Points		      [0, -235]
+	      Points		      [0, -310]
 	      DstBlock		      "Gain7"
 	      DstPort		      1
 	    }
@@ -3237,7 +3501,7 @@ Model {
 	  ZOrder		  23
 	  SrcBlock		  "Command State Filter\nSmoothes Trajectory\nKeeps initial impact force down"
 	  SrcPort		  1
-	  Points		  [25, 0; 0, -45]
+	  Points		  [25, 0; 0, -40]
 	  Branch {
 	    ZOrder		    24
 	    DstBlock		    "X_act*"
@@ -3268,6 +3532,7 @@ Model {
 	  ZOrder		  28
 	  SrcBlock		  "Saturate\nPosition\nCommand"
 	  SrcPort		  1
+	  Points		  [30, 0]
 	  DstBlock		  "Command State Filter\nSmoothes Trajectory\nKeeps initial impact force down"
 	  DstPort		  1
 	}
@@ -3309,13 +3574,6 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  36
-	  SrcBlock		  "Sum4"
-	  SrcPort		  1
-	  DstBlock		  "K = Ts2"
-	  DstPort		  1
-	}
-	Line {
 	  ZOrder		  37
 	  SrcBlock		  "Sum5"
 	  SrcPort		  1
@@ -3347,13 +3605,6 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  42
-	  SrcBlock		  "K = Ts2"
-	  SrcPort		  1
-	  DstBlock		  "Gain6"
-	  DstPort		  1
-	}
-	Line {
 	  ZOrder		  43
 	  SrcBlock		  "Gain6"
 	  SrcPort		  1
@@ -3367,10 +3618,10 @@ Model {
 	  Labels		  [1, 1]
 	  SrcBlock		  "Sum7"
 	  SrcPort		  1
-	  Points		  [485, 0]
+	  Points		  [540, 0]
 	  Branch {
 	    ZOrder		    45
-	    Points		    [0, 330]
+	    Points		    [0, 405]
 	    DstBlock		    "Switch"
 	    DstPort		    1
 	  }
@@ -3410,7 +3661,7 @@ Model {
 	  ZOrder		  52
 	  SrcBlock		  "Zero-Order\nHold2"
 	  SrcPort		  1
-	  Points		  [-40, 0]
+	  Points		  [-155, 0]
 	  DstBlock		  "Sum4"
 	  DstPort		  2
 	}
@@ -3512,7 +3763,7 @@ Model {
 	  ZOrder		  72
 	  SrcBlock		  "Command State Filter\nSmoothes Trajectory\nKeeps initial impact force down"
 	  SrcPort		  3
-	  Points		  [80, 0; 0, -330]
+	  Points		  [80, 0; 0, -390]
 	  DstBlock		  "Gain8"
 	  DstPort		  1
 	}
@@ -3531,6 +3782,77 @@ Model {
 	  DstBlock		  "Sum9"
 	  DstPort		  2
 	}
+	Line {
+	  ZOrder		  121
+	  SrcBlock		  "Ts"
+	  SrcPort		  1
+	  DstBlock		  "Sum10"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  122
+	  SrcBlock		  "Delay"
+	  SrcPort		  1
+	  Points		  [-20, 0]
+	  DstBlock		  "Sum10"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "Integrated \nForce \nError"
+	  ZOrder		  125
+	  Labels		  [1, 1]
+	  SrcBlock		  "Sum10"
+	  SrcPort		  1
+	  Points		  [57, 0]
+	  Branch {
+	    ZOrder		    129
+	    DstBlock		    "Gain6"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    128
+	    Points		    [0, 65]
+	    DstBlock		    "Delay"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  127
+	  SrcBlock		  "Sum4"
+	  SrcPort		  1
+	  DstBlock		  "Ts"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  131
+	  SrcBlock		  "Ts1"
+	  SrcPort		  1
+	  DstBlock		  "Sum11"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  132
+	  SrcBlock		  "Delay1"
+	  SrcPort		  1
+	  Points		  [-20, 0]
+	  DstBlock		  "Sum11"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  144
+	  SrcBlock		  "Ts2"
+	  SrcPort		  1
+	  DstBlock		  "Sum12"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  145
+	  SrcBlock		  "Delay2"
+	  SrcPort		  1
+	  Points		  [-20, 0]
+	  DstBlock		  "Sum12"
+	  DstPort		  2
+	}
       }
     }
     Block {
@@ -3541,10 +3863,9 @@ Model {
       Position		      [945, 274, 975, 296]
       ZOrder		      -4
       Floating		      off
-      Location		      [6, 447, 1017, 1044]
-      Open		      off
+      Location		      [1974, 12, 2985, 789]
+      Open		      on
       NumInputPorts	      "1"
-      ZoomMode		      "xonly"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
@@ -3560,7 +3881,7 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      "0.84268     0.82626    0.088032    0.060302"
+      LegendLocations	      "0.84268     0.83324    0.088032    0.046332"
       YMin		      "-10"
       YMax		      "130"
       SaveName		      "ScopeData5"
@@ -3592,7 +3913,7 @@ Model {
       }
       System {
 	Name			"Motion Observer"
-	Location		[0, 0, 1680, 1010]
+	Location		[1672, -158, 3608, 1018]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -3604,12 +3925,12 @@ Model {
 	TiledPaperMargins	[0.500000, 0.500000, 0.500000, 0.500000]
 	TiledPageScale		1
 	ShowPageBoundaries	off
-	ZoomFactor		"200"
+	ZoomFactor		"150"
 	Block {
 	  BlockType		  Inport
 	  Name			  "X_act_fb"
 	  SID			  "735"
-	  Position		  [260, 103, 290, 117]
+	  Position		  [260, 123, 290, 137]
 	  ZOrder		  -1
 	  IconDisplay		  "Port number"
 	}
@@ -3617,7 +3938,7 @@ Model {
 	  BlockType		  Inport
 	  Name			  "F_act*"
 	  SID			  "737"
-	  Position		  [580, 38, 610, 52]
+	  Position		  [650, 58, 680, 72]
 	  ZOrder		  -2
 	  Port			  "2"
 	  IconDisplay		  "Port number"
@@ -3626,7 +3947,7 @@ Model {
 	  BlockType		  Gain
 	  Name			  "1/2"
 	  SID			  "738"
-	  Position		  [885, 94, 920, 126]
+	  Position		  [1210, 114, 1245, 146]
 	  ZOrder		  -3
 	  Gain			  "0.5"
 	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
@@ -3637,7 +3958,7 @@ Model {
 	  BlockType		  Gain
 	  Name			  "1/Mar_hat"
 	  SID			  "739"
-	  Position		  [605, 155, 690, 195]
+	  Position		  [675, 195, 760, 235]
 	  ZOrder		  -4
 	  Gain			  "1/Mar_hat"
 	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
@@ -3645,49 +3966,74 @@ Model {
 	  SaturateOnIntegerOverflow off
 	}
 	Block {
-	  BlockType		  DiscreteIntegrator
-	  Name			  "K = Ts"
-	  SID			  "741"
-	  Ports			  [1, 1]
-	  Position		  [450, 29, 485, 61]
-	  ZOrder		  -5
-	  IntegratorMethod	  "Accumulation: Backward Euler"
-	  gainval		  "Ts"
-	  SampleTime		  "-1"
-	  ICPrevOutput		  "DiscIntNeverNeededParam"
-	  ICPrevScaledInput	  "DiscIntNeverNeededParam"
+	  BlockType		  Gain
+	  Name			  "1/Mar_hat "
+	  SID			  "869"
+	  Position		  [730, 110, 815, 150]
+	  ZOrder		  1
+	  Gain			  "1/Mar_hat"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
 	}
 	Block {
-	  BlockType		  DiscreteIntegrator
-	  Name			  "K = Ts."
-	  SID			  "742"
+	  BlockType		  Delay
+	  Name			  "Delay"
+	  SID			  "875"
 	  Ports			  [1, 1]
-	  Position		  [950, 94, 985, 126]
-	  ZOrder		  -6
-	  IntegratorMethod	  "Accumulation: Backward Euler"
-	  gainval		  "Ts"
-	  SampleTime		  "-1"
-	  ICPrevOutput		  "DiscIntNeverNeededParam"
-	  ICPrevScaledInput	  "DiscIntNeverNeededParam"
+	  Position		  [510, 63, 545, 97]
+	  ZOrder		  5
+	  BlockMirror		  on
+	  InputPortMap		  "u0"
+	  DelayLength		  "1"
 	}
 	Block {
-	  BlockType		  DiscreteIntegrator
-	  Name			  "K = Ts/Mar_hat"
-	  SID			  "743"
+	  BlockType		  Delay
+	  Name			  "Delay1"
+	  SID			  "878"
 	  Ports			  [1, 1]
-	  Position		  [675, 94, 710, 126]
-	  ZOrder		  -7
-	  IntegratorMethod	  "Accumulation: Forward Euler"
-	  gainval		  "Ts/Mar_hat"
-	  SampleTime		  "-1"
-	  ICPrevOutput		  "DiscIntNeverNeededParam"
-	  ICPrevScaledInput	  "DiscIntNeverNeededParam"
+	  Position		  [990, 158, 1025, 192]
+	  ZOrder		  8
+	  BlockMirror		  on
+	  InputPortMap		  "u0"
+	  DelayLength		  "1"
+	}
+	Block {
+	  BlockType		  Delay
+	  Name			  "Delay2"
+	  SID			  "881"
+	  Ports			  [1, 1]
+	  Position		  [915, 113, 950, 147]
+	  ZOrder		  11
+	  InputPortMap		  "u0"
+	  DelayLength		  "1"
+	}
+	Block {
+	  BlockType		  Delay
+	  Name			  "Delay3"
+	  SID			  "882"
+	  Ports			  [1, 1]
+	  Position		  [1125, 138, 1160, 172]
+	  ZOrder		  12
+	  InputPortMap		  "u0"
+	  DelayLength		  "1"
+	}
+	Block {
+	  BlockType		  Delay
+	  Name			  "Delay4"
+	  SID			  "884"
+	  Ports			  [1, 1]
+	  Position		  [1355, 153, 1390, 187]
+	  ZOrder		  14
+	  BlockMirror		  on
+	  InputPortMap		  "u0"
+	  DelayLength		  "1"
 	}
 	Block {
 	  BlockType		  Gain
-	  Name			  "K_iso"
+	  Name			  "K_iso (N/(m-s))"
 	  SID			  "744"
-	  Position		  [505, 26, 555, 64]
+	  Position		  [575, 16, 625, 54]
 	  ZOrder		  -8
 	  Gain			  "kiso"
 	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
@@ -3696,9 +4042,9 @@ Model {
 	}
 	Block {
 	  BlockType		  Gain
-	  Name			  "K_so"
+	  Name			  "K_so (N/m)"
 	  SID			  "745"
-	  Position		  [470, 91, 520, 129]
+	  Position		  [540, 111, 590, 149]
 	  ZOrder		  -9
 	  Gain			  "kso"
 	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
@@ -3710,7 +4056,7 @@ Model {
 	  Name			  "Sum1"
 	  SID			  "750"
 	  Ports			  [2, 1]
-	  Position		  [615, 100, 635, 120]
+	  Position		  [685, 120, 705, 140]
 	  ZOrder		  -10
 	  ShowName		  off
 	  IconShape		  "round"
@@ -3724,7 +4070,7 @@ Model {
 	  Name			  "Sum2"
 	  SID			  "764"
 	  Ports			  [2, 1]
-	  Position		  [390, 100, 410, 120]
+	  Position		  [360, 120, 380, 140]
 	  ZOrder		  -11
 	  ShowName		  off
 	  IconShape		  "round"
@@ -3738,7 +4084,7 @@ Model {
 	  Name			  "Sum3"
 	  SID			  "752"
 	  Ports			  [2, 1]
-	  Position		  [555, 100, 575, 120]
+	  Position		  [625, 120, 645, 140]
 	  ZOrder		  -12
 	  ShowName		  off
 	  IconShape		  "round"
@@ -3752,7 +4098,7 @@ Model {
 	  Name			  "Sum4"
 	  SID			  "753"
 	  Ports			  [2, 1]
-	  Position		  [750, 100, 770, 120]
+	  Position		  [1055, 120, 1075, 140]
 	  ZOrder		  -13
 	  ShowName		  off
 	  IconShape		  "round"
@@ -3762,28 +4108,111 @@ Model {
 	  SaturateOnIntegerOverflow off
 	}
 	Block {
-	  BlockType		  Reference
-	  Name			  "Transfer Fcn\nReal Zero"
-	  SID			  "754"
-	  Ports			  [1, 1]
-	  Position		  [800, 94, 865, 126]
-	  ZOrder		  -14
+	  BlockType		  Sum
+	  Name			  "Sum5"
+	  SID			  "877"
+	  Ports			  [2, 1]
+	  Position		  [475, 25, 495, 45]
+	  ZOrder		  7
 	  ShowName		  off
-	  LibraryVersion	  "1.287"
-	  SourceBlock		  "simulink/Discrete/Transfer Fcn\nReal Zero"
-	  SourceType		  "Transfer Fcn Real Zero"
-	  ContentPreviewEnabled	  off
-	  ZeroZ			  "-1"
-	  ICPrevInput		  "0.0"
-	  InputProcessing	  "Inherited"
-	  RndMeth		  "Floor"
-	  DoSatur		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Integrated Pos \nError"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum6"
+	  SID			  "879"
+	  Ports			  [2, 1]
+	  Position		  [970, 120, 990, 140]
+	  ZOrder		  10
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	  Port {
+	    PortNumber		    1
+	    Name		    "Velocity\nLeft"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum7"
+	  SID			  "883"
+	  Ports			  [2, 1]
+	  Position		  [1175, 120, 1195, 140]
+	  ZOrder		  13
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum8"
+	  SID			  "885"
+	  Ports			  [2, 1]
+	  Position		  [1330, 120, 1350, 140]
+	  ZOrder		  16
+	  ShowName		  off
+	  IconShape		  "round"
+	  Inputs		  "|++"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Ts"
+	  SID			  "876"
+	  Position		  [410, 16, 460, 54]
+	  ZOrder		  6
+	  Gain			  "Ts"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Ts "
+	  SID			  "880"
+	  Position		  [845, 111, 895, 149]
+	  ZOrder		  9
+	  Gain			  "Ts"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Ts  "
+	  SID			  "886"
+	  Position		  [1265, 111, 1315, 149]
+	  ZOrder		  15
+	  Gain			  "Ts"
+	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
 	}
 	Block {
 	  BlockType		  ZeroOrderHold
 	  Name			  "Zero-Order\nHold4"
 	  SID			  "758"
-	  Position		  [325, 103, 350, 117]
+	  Position		  [325, 123, 350, 137]
 	  ZOrder		  -15
 	  ShowName		  off
 	  SampleTime		  "Ts"
@@ -3792,7 +4221,7 @@ Model {
 	  BlockType		  Gain
 	  Name			  "b_o"
 	  SID			  "759"
-	  Position		  [505, 160, 535, 190]
+	  Position		  [575, 200, 605, 230]
 	  ZOrder		  -16
 	  Gain			  "bo"
 	  ParamDataTypeStr	  "Inherit: Inherit via internal rule"
@@ -3803,7 +4232,7 @@ Model {
 	  BlockType		  Outport
 	  Name			  "x_act_hat"
 	  SID			  "760"
-	  Position		  [1040, 103, 1070, 117]
+	  Position		  [1440, 123, 1470, 137]
 	  ZOrder		  -17
 	  IconDisplay		  "Port number"
 	}
@@ -3811,21 +4240,14 @@ Model {
 	  BlockType		  Outport
 	  Name			  "vel_act_hat"
 	  SID			  "762"
-	  Position		  [820, 53, 850, 67]
+	  Position		  [1125, 73, 1155, 87]
 	  ZOrder		  -18
 	  Port			  "2"
 	  IconDisplay		  "Port number"
 	}
 	Line {
-	  ZOrder		  1
-	  SrcBlock		  "K = Ts"
-	  SrcPort		  1
-	  DstBlock		  "K_iso"
-	  DstPort		  1
-	}
-	Line {
 	  ZOrder		  2
-	  SrcBlock		  "K_iso"
+	  SrcBlock		  "K_iso (N/(m-s))"
 	  SrcPort		  1
 	  Points		  [5, 0]
 	  DstBlock		  "Sum3"
@@ -3839,65 +4261,56 @@ Model {
 	  DstPort		  1
 	}
 	Line {
-	  ZOrder		  4
-	  SrcBlock		  "Sum1"
-	  SrcPort		  1
-	  DstBlock		  "K = Ts/Mar_hat"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  5
-	  SrcBlock		  "K = Ts/Mar_hat"
-	  SrcPort		  1
-	  DstBlock		  "Sum4"
-	  DstPort		  1
-	}
-	Line {
 	  ZOrder		  6
 	  SrcBlock		  "Sum4"
 	  SrcPort		  1
 	  Points		  [10, 0]
 	  Branch {
-	    ZOrder		    7
-	    DstBlock		    "Transfer Fcn\nReal Zero"
+	    ZOrder		    54
+	    Points		    [0, 25]
+	    DstBlock		    "Delay3"
 	    DstPort		    1
 	  }
 	  Branch {
-	    ZOrder		    8
+	    ZOrder		    52
+	    DstBlock		    "Sum7"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    51
 	    Points		    [0, -50]
 	    DstBlock		    "vel_act_hat"
 	    DstPort		    1
 	  }
 	}
 	Line {
-	  ZOrder		  9
-	  SrcBlock		  "Transfer Fcn\nReal Zero"
+	  FontName		  "Helvetica"
+	  FontSize		  9
+	  FontWeight		  "normal"
+	  FontAngle		  "normal"
+	  ZOrder		  60
+	  SrcBlock		  "Sum8"
 	  SrcPort		  1
-	  DstBlock		  "1/2"
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  10
-	  SrcBlock		  "1/2"
-	  SrcPort		  1
-	  DstBlock		  "K = Ts."
-	  DstPort		  1
-	}
-	Line {
-	  ZOrder		  11
-	  SrcBlock		  "K = Ts."
-	  SrcPort		  1
-	  Points		  [15, 0]
+	  Points		  [65, 0]
+	  Branch {
+	    ZOrder		    70
+	    Points		    [0, 40]
+	    Branch {
+	      ZOrder		      72
+	      DstBlock		      "Delay4"
+	      DstPort		      1
+	    }
+	    Branch {
+	      ZOrder		      13
+	      Points		      [0, 90; -1050, 0]
+	      DstBlock		      "Sum2"
+	      DstPort		      2
+	    }
+	  }
 	  Branch {
 	    ZOrder		    12
 	    DstBlock		    "x_act_hat"
 	    DstPort		    1
-	  }
-	  Branch {
-	    ZOrder		    13
-	    Points		    [0, 130; -605, 0]
-	    DstBlock		    "Sum2"
-	    DstPort		    2
 	  }
 	}
 	Line {
@@ -3909,33 +4322,10 @@ Model {
 	}
 	Line {
 	  ZOrder		  15
-	  SrcBlock		  "K_so"
+	  SrcBlock		  "K_so (N/m)"
 	  SrcPort		  1
 	  DstBlock		  "Sum3"
 	  DstPort		  2
-	}
-	Line {
-	  ZOrder		  16
-	  SrcBlock		  "Sum2"
-	  SrcPort		  1
-	  Points		  [15, 0]
-	  Branch {
-	    ZOrder		    17
-	    DstBlock		    "K_so"
-	    DstPort		    1
-	  }
-	  Branch {
-	    ZOrder		    18
-	    Points		    [0, -65]
-	    DstBlock		    "K = Ts"
-	    DstPort		    1
-	  }
-	  Branch {
-	    ZOrder		    19
-	    Points		    [0, 65]
-	    DstBlock		    "b_o"
-	    DstPort		    1
-	  }
 	}
 	Line {
 	  ZOrder		  20
@@ -3955,7 +4345,7 @@ Model {
 	  ZOrder		  22
 	  SrcBlock		  "1/Mar_hat"
 	  SrcPort		  1
-	  Points		  [65, 0]
+	  Points		  [300, 0]
 	  DstBlock		  "Sum4"
 	  DstPort		  2
 	}
@@ -3967,15 +4357,166 @@ Model {
 	  DstBlock		  "Sum1"
 	  DstPort		  1
 	}
+	Line {
+	  ZOrder		  24
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  DstBlock		  "1/Mar_hat "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  26
+	  SrcBlock		  "Ts"
+	  SrcPort		  1
+	  DstBlock		  "Sum5"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  27
+	  SrcBlock		  "Delay"
+	  SrcPort		  1
+	  Points		  [-20, 0]
+	  DstBlock		  "Sum5"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "Integrated Pos \nError"
+	  ZOrder		  28
+	  Labels		  [1, 1]
+	  SrcBlock		  "Sum5"
+	  SrcPort		  1
+	  Points		  [57, 0]
+	  Branch {
+	    ZOrder		    30
+	    Points		    [0, 45]
+	    DstBlock		    "Delay"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    29
+	    DstBlock		    "K_iso (N/(m-s))"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  16
+	  SrcBlock		  "Sum2"
+	  SrcPort		  1
+	  Points		  [21, 0]
+	  Branch {
+	    ZOrder		    35
+	    Points		    [94, 0]
+	    Branch {
+	      ZOrder		      17
+	      DstBlock		      "K_so (N/m)"
+	      DstPort		      1
+	    }
+	    Branch {
+	      ZOrder		      19
+	      Points		      [0, 85]
+	      DstBlock		      "b_o"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    ZOrder		    33
+	    Points		    [0, -95]
+	    DstBlock		    "Ts"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  37
+	  SrcBlock		  "Delay1"
+	  SrcPort		  1
+	  Points		  [-5, 0]
+	  DstBlock		  "Sum6"
+	  DstPort		  2
+	}
+	Line {
+	  Name			  "Velocity\nLeft"
+	  ZOrder		  40
+	  Labels		  [1, 1]
+	  SrcBlock		  "Sum6"
+	  SrcPort		  1
+	  Points		  [45, 0]
+	  Branch {
+	    ZOrder		    45
+	    DstBlock		    "Delay1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    ZOrder		    43
+	    DstBlock		    "Sum4"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  ZOrder		  46
+	  SrcBlock		  "Ts "
+	  SrcPort		  1
+	  DstBlock		  "Delay2"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  47
+	  SrcBlock		  "Delay2"
+	  SrcPort		  1
+	  DstBlock		  "Sum6"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  48
+	  SrcBlock		  "1/Mar_hat "
+	  SrcPort		  1
+	  DstBlock		  "Ts "
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  50
+	  SrcBlock		  "Delay3"
+	  SrcPort		  1
+	  DstBlock		  "Sum7"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  55
+	  SrcBlock		  "Sum7"
+	  SrcPort		  1
+	  DstBlock		  "1/2"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  56
+	  SrcBlock		  "Ts  "
+	  SrcPort		  1
+	  DstBlock		  "Sum8"
+	  DstPort		  1
+	}
+	Line {
+	  ZOrder		  57
+	  SrcBlock		  "Delay4"
+	  SrcPort		  1
+	  Points		  [-10, 0]
+	  DstBlock		  "Sum8"
+	  DstPort		  2
+	}
+	Line {
+	  ZOrder		  69
+	  SrcBlock		  "1/2"
+	  SrcPort		  1
+	  DstBlock		  "Ts  "
+	  DstPort		  1
+	}
 	Annotation {
-	  SID			  "862"
-	  Name			  "The delay in the feedback path is because matlab is detecting an algebraing loop and complaining.\nThe de"
-	  "lay solves this issue."
-	  Position		  [695, 286, 1168, 314]
+	  SID			  "873"
+	  Name			  "1+ z^-1/(1-z^-1)"
+	  Position		  [1114, 230, 1187, 245]
 	  InternalMargins	  [0, 0, 0, 0]
 	  FixedHeight		  off
 	  FixedWidth		  off
-	  ZOrder		  -1
+	  HorizontalAlignment	  "left"
+	  VerticalAlignment	  "top"
 	}
       }
     }
@@ -4020,8 +4561,8 @@ Model {
       Position		      [945, 373, 975, 417]
       ZOrder		      -4
       Floating		      off
-      Location		      [6, 447, 1017, 1044]
-      Open		      off
+      Location		      [1, 48, 1681, 1009]
+      Open		      on
       NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
@@ -4038,7 +4579,7 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      "0.68606     0.78221     0.10386    0.086544"
+      LegendLocations	      "0.68215     0.77858      0.0625    0.053763"
       YMin		      "0"
       YMax		      "0.00425"
       SaveName		      "ScopeData2"
@@ -4054,8 +4595,8 @@ Model {
       Position		      [945, 533, 975, 577]
       ZOrder		      -4
       Floating		      off
-      Location		      [601, 315, 1081, 742]
-      Open		      off
+      Location		      [1, 48, 1681, 1009]
+      Open		      on
       NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
@@ -4072,7 +4613,7 @@ Model {
 	MarkerStyles		"none|none|none|none|none|none"
       }
       ShowLegends	      on
-      LegendLocations	      "0.6005     0.73669      0.2375       0.121"
+      LegendLocations	      "0.6005     0.73669    0.067857    0.053763"
       YMin		      "-0.00025"
       YMax		      "0.0025"
       SaveName		      "ScopeData3"
