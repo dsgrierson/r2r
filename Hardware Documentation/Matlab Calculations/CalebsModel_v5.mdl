@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.211"
+    ComputedModelVersion    "1.212"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -53,10 +53,10 @@ Model {
 	$ClassName		"Simulink.EditorInfo"
 	IsActive		[1]
 	ViewObjType		"SimulinkSubsys"
-	LoadSaveID		"793"
+	LoadSaveID		"634"
 	Extents			[1886.0, 1032.0]
-	ZoomFactor		[1.5]
-	Offset			[-44.69999959766858, -33.43333159685136]
+	ZoomFactor		[0.8]
+	Offset			[-146.09374589473055, -92.629153289894475]
       }
     }
   }
@@ -66,9 +66,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "oberstare"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Aug 18 17:32:35 2014"
-  RTWModifiedTimeStamp	  330283898
-  ModelVersionFormat	  "1.%<AutoIncrement:211>"
+  LastModifiedDate	  "Mon Aug 18 17:39:28 2014"
+  RTWModifiedTimeStamp	  330284366
+  ModelVersionFormat	  "1.%<AutoIncrement:212>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1852,7 +1852,7 @@ Model {
       System {
 	Name			"Digital Controller"
 	Location		[1672, -158, 3608, 1018]
-	Open			off
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1901,7 +1901,7 @@ Model {
 	  Name			  "Command State Filter\nSmoothes Trajectory\nKeeps initial impact force down"
 	  SID			  "793"
 	  Ports			  [1, 5]
-	  Position		  [360, 581, 495, 649]
+	  Position		  [360, 591, 495, 659]
 	  ZOrder		  172
 	  RequestExecContextInheritance	off
 	  Port {
@@ -1919,7 +1919,7 @@ Model {
 	  System {
 	    Name		    "Command State Filter\nSmoothes Trajectory\nKeeps initial impact force down"
 	    Location		    [1672, -158, 3608, 1018]
-	    Open		    on
+	    Open		    off
 	    ModelBrowserVisibility  off
 	    ModelBrowserWidth	    200
 	    ScreenColor		    "white"
@@ -2875,7 +2875,7 @@ Model {
 	  Name			  "Position\nCommand\nRamp"
 	  SID			  "826"
 	  Ports			  [0, 1]
-	  Position		  [75, 595, 105, 625]
+	  Position		  [75, 610, 105, 640]
 	  ZOrder		  -31
 	  LibraryVersion	  "1.287"
 	  SourceBlock		  "simulink/Sources/Ramp"
@@ -2943,7 +2943,7 @@ Model {
 	  Name			  "Saturate\nPosition\nCommand"
 	  SID			  "827"
 	  Ports			  [1, 1]
-	  Position		  [280, 595, 310, 625]
+	  Position		  [280, 610, 310, 640]
 	  ZOrder		  -14
 	  InputPortMap		  "u0"
 	  UpperLimit		  "ContactPoint+PositionCmdErr"
@@ -3472,7 +3472,7 @@ Model {
 	  ZOrder		  20
 	  SrcBlock		  "Command State Filter\nSmoothes Trajectory\nKeeps initial impact force down"
 	  SrcPort		  2
-	  Points		  [0, 10; 35, 0]
+	  Points		  [0, 0; 35, 0]
 	  Branch {
 	    ZOrder		    21
 	    Labels		    [1, 1]
@@ -3501,7 +3501,7 @@ Model {
 	  ZOrder		  23
 	  SrcBlock		  "Command State Filter\nSmoothes Trajectory\nKeeps initial impact force down"
 	  SrcPort		  1
-	  Points		  [25, 0; 0, -40]
+	  Points		  [25, 0; 0, -50]
 	  Branch {
 	    ZOrder		    24
 	    DstBlock		    "X_act*"
@@ -3532,7 +3532,6 @@ Model {
 	  ZOrder		  28
 	  SrcBlock		  "Saturate\nPosition\nCommand"
 	  SrcPort		  1
-	  Points		  [30, 0]
 	  DstBlock		  "Command State Filter\nSmoothes Trajectory\nKeeps initial impact force down"
 	  DstPort		  1
 	}
@@ -3763,7 +3762,7 @@ Model {
 	  ZOrder		  72
 	  SrcBlock		  "Command State Filter\nSmoothes Trajectory\nKeeps initial impact force down"
 	  SrcPort		  3
-	  Points		  [80, 0; 0, -390]
+	  Points		  [80, 0; 0, -400]
 	  DstBlock		  "Gain8"
 	  DstPort		  1
 	}
